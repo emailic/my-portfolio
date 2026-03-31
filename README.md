@@ -1,10 +1,10 @@
-# ema-portfolio
+# my-portfolio
 
 A simple static portfolio/consulting landing page for Ema Ilic.
 
 ## Files
 
-- `index.html` — the live page
+- `index.html` - the live page
 
 ## Recommended free hosting: GitHub Pages
 
@@ -20,7 +20,7 @@ Why GitHub Pages over Tiiny Host:
 Open `index.html` in any editor and change the text, links, prices, or sections.
 
 Common edits:
-- headline text → search for `I help businesses actually use AI`
+- headline text → search for `Everyone is talking about AI.`
 - prices → search for `€200`, `€1,500`, `€4,500`
 - Stripe links → search for `buy.stripe.com` / `book.stripe.com`
 - email → search for `ema.ilic9@gmail.com`
@@ -34,7 +34,7 @@ Option 1: just open `index.html` in your browser.
 Option 2: run a tiny local server:
 
 ```bash
-cd ema-portfolio
+cd my-portfolio
 python3 -m http.server 8000
 ```
 
@@ -51,8 +51,8 @@ http://localhost:8000
 From the repo root:
 
 ```bash
-git add ema-portfolio
-git commit -m "Add ema-portfolio static site"
+git add my-portfolio
+git commit -m "Add my-portfolio static site"
 git push origin main
 ```
 
@@ -71,7 +71,7 @@ GitHub will give you a public URL.
 After changing `index.html`:
 
 ```bash
-git add ema-portfolio/index.html
+git add my-portfolio/index.html
 git commit -m "Update my-portfolio copy"
 git push origin main
 ```
@@ -80,7 +80,7 @@ GitHub Pages will redeploy automatically.
 
 ## If you prefer Tiiny Host instead
 
-1. Zip the contents of `ema-portfolio`
+1. Zip the contents of `my-portfolio`
 2. Upload at <https://tiiny.host>
 3. Re-upload whenever you change the page
 
