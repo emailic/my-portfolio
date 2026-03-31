@@ -22,6 +22,7 @@ Open `index.html` in any editor and change the text, links, prices, or sections.
 Common edits:
 - headline text → search for `I help businesses actually use AI`
 - prices → search for `€200`, `€1,500`, `€4,500`
+- Stripe links → search for `buy.stripe.com` / `book.stripe.com`
 - email → search for `ema.ilic9@gmail.com`
 - WhatsApp → search for `385993749704`
 - Medium / LinkedIn links → search for `medium.com` / `linkedin.com`
@@ -60,7 +61,7 @@ Then in GitHub:
 2. Go to **Pages**
 3. Set source to **Deploy from a branch**
 4. Select branch: `main`
-5. Select folder: `/ema-portfolio`
+5. Select folder: `/my-portfolio`
 6. Save
 
 GitHub will give you a public URL.
@@ -71,7 +72,7 @@ After changing `index.html`:
 
 ```bash
 git add ema-portfolio/index.html
-git commit -m "Update ema-portfolio copy"
+git commit -m "Update my-portfolio copy"
 git push origin main
 ```
 

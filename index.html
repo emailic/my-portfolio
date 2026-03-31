@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ema Ilic — AI Consulting</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='64'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230f0e0c'/%3E%3Ctext%20x='32'%20y='36'%20text-anchor='middle'%20font-family='system-ui,%20-apple-system,%20Segoe%20UI,%20Roboto,%20Helvetica,%20Arial,%20sans-serif'%20font-size='28'%20font-weight='700'%20fill='%23c8a96e'%3EEI%3C/text%3E%3C/svg%3E">
 <meta name="description" content="Not sure if AI is right for your business? Book a 60-minute session with a GenAI engineer who builds production AI systems for a living.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,10 +92,10 @@ section{padding:6rem 3rem}
 .availability-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);padding:.35rem .9rem;margin-top:1.5rem}
 .availability-badge span{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.services-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin-top:4rem;background:var(--border);max-width:900px}
-.service-card{background:var(--bg2);padding:2.5rem;position:relative;transition:background .3s}
+.services-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin:4rem auto 0;background:var(--border);max-width:900px}
+.service-card{background:var(--bg2);padding:2.5rem;position:relative;transition:background .3s;border-top:2px solid transparent}
 .service-card:hover{background:var(--surface)}
-.service-card.featured{background:var(--surface);border-top:2px solid var(--accent)}
+.service-card.featured{background:var(--surface);border-top-color:var(--accent)}
 .service-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--border);line-height:1;margin-bottom:1.5rem}
 .service-card.featured .service-num{color:var(--dim)}
 .service-tag{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
@@ -142,6 +143,31 @@ section{padding:6rem 3rem}
 .article-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400}
 .article-tag{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
+/* RECOMMENDATIONS */
+.recs{background:var(--bg2)}
+.recs-inner{max-width:900px;margin:0 auto}
+.recs-header{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-end;flex-wrap:wrap}
+.recs-link{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.recs-link:hover{color:var(--accent)}
+.recs-carousel{margin-top:2.5rem;border:1px solid var(--border);background:var(--surface);position:relative;overflow:hidden}
+.recs-track{display:flex;transition:transform .5s ease;will-change:transform}
+.recs-slide{min-width:100%;padding:2.2rem 2.2rem 1.8rem}
+.recs-quote{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;line-height:1.55;color:var(--text)}
+.recs-quote em{font-style:italic;color:var(--accent)}
+.recs-meta{margin-top:1.4rem;display:flex;flex-direction:column;gap:.35rem}
+.recs-name{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.recs-role{color:var(--muted);font-size:.9rem;line-height:1.6}
+.recs-when{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--dim)}
+.recs-controls{position:absolute;inset:auto 0 0 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;border-top:1px solid var(--border);background:linear-gradient(to bottom,rgba(22,20,16,.35),rgba(22,20,16,.8))}
+.recs-btn{appearance:none;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem .9rem;cursor:pointer;transition:all .2s}
+.recs-btn:hover{color:var(--text);border-color:var(--dim)}
+.recs-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.recs-dots{display:flex;gap:.45rem;align-items:center;justify-content:center;flex:1}
+.recs-dot{width:7px;height:7px;border-radius:999px;border:1px solid var(--dim);background:transparent;cursor:pointer;transition:all .2s}
+.recs-dot[aria-current="true"]{background:var(--accent);border-color:var(--accent)}
+.recs-dot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
 /* CTA */
 .cta-section{text-align:center;padding:8rem 3rem;position:relative;overflow:hidden}
 .cta-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:18vw;font-weight:300;color:var(--surface);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;line-height:1}
@@ -151,6 +177,23 @@ section{padding:6rem 3rem}
 .cta-inner p{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .cta-note{margin-top:1.5rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--dim)}
+
+/* CONTACT */
+.contact{background:var(--surface)}
+.contact-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:start}
+.contact-copy p{margin-top:1.2rem;color:var(--muted);font-size:.95rem;line-height:1.9;max-width:44ch}
+.contact-direct{margin-top:1.6rem;border-top:1px solid var(--border);padding-top:1.2rem}
+.contact-direct .label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.contact-email{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.06em;color:var(--text);text-decoration:none;border-bottom:1px solid var(--dim);padding-bottom:.15rem}
+.contact-email:hover{border-color:var(--accent)}
+.contact-form{border:1px solid var(--border);background:var(--bg2);padding:2rem}
+.field{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem}
+.field label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.field input,.field textarea{width:100%;border:1px solid var(--border);background:rgba(15,14,12,.4);color:var(--text);padding:.85rem .9rem;font-size:.95rem;outline:none;transition:border-color .2s}
+.field textarea{min-height:140px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--dim)}
+.contact-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:1.2rem}
+.form-note{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--dim);line-height:1.6}
 
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--bg2)}
@@ -181,6 +224,11 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   .cta-bg-text{display:none}
   .article-row{grid-template-columns:auto 1fr}
   .article-tag{display:none}
+  .recs-slide{padding:1.8rem 1.4rem 1.4rem}
+  .recs-controls{padding:.9rem 1rem}
+  .recs-quote{font-size:1.2rem}
+  .contact-inner{grid-template-columns:1fr;gap:2rem}
+  .contact-form{padding:1.4rem}
 }
 </style>
 </head>
@@ -189,7 +237,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">Ema Ilic</a>
-  <a href="YOUR_STRIPE_LINK_HERE" target="_blank" class="nav-cta">Book the AI Hour — €200</a>
+  <a href="https://buy.stripe.com/test_5kQ5kCdm8ay9fLUg2k3sI00" target="_blank" class="nav-cta">Book the AI Hour — €200</a>
 </nav>
 
 <!-- HERO -->
@@ -198,14 +246,15 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   <div class="hero-dot"></div>
   <p class="hero-label mono">AI Consulting · Currently Available</p>
   <h1 class="serif">Everyone is talking about AI.<br><em>Let's figure out if it actually matters for your business.</em></h1>
-  <p class="hero-sub">I'm a GenAI engineer with 5+ years building production AI systems. In one focused session, I'll give you a clear, honest answer on what AI can and can't do for you — and exactly what to do next.</p>
+  <p class="hero-sub">I'm a GenAI engineer with 7+ years building production AI systems. In one focused session, I'll give you a clear, honest answer on what AI can and can't do for you — and exactly what to do next.</p>
   <div class="hero-proof">
-    <div class="proof-item"><span class="proof-num serif">5+</span><span class="proof-label mono">Years in production AI</span></div>
+    <div class="proof-item"><span class="proof-num serif">7+</span><span class="proof-label mono">Years in production AI</span></div>
     <div class="proof-item"><span class="proof-num serif">1K+</span><span class="proof-label mono">Monthly users on AI product</span></div>
+    <div class="proof-item"><span class="proof-num serif">7+</span><span class="proof-label mono">Satisfied Clients</span></div>
     <div class="proof-item"><span class="proof-num serif">2</span><span class="proof-label mono">Research publications</span></div>
   </div>
   <div class="hero-ctas">
-    <a href="YOUR_STRIPE_LINK_HERE" target="_blank" class="btn-primary">→ Book the AI Hour — €200</a>
+    <a href="https://buy.stripe.com/test_5kQ5kCdm8ay9fLUg2k3sI00" target="_blank" class="btn-primary">→ Book the AI Hour — €200</a>
     <a href="#services" class="btn-ghost">See all services</a>
   </div>
 </section>
@@ -285,7 +334,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
       <p class="service-tag mono">Start here</p>
       <h3 class="service-name serif">The AI Hour</h3>
       <div class="service-price serif">€200 <span>/ 60 min</span></div>
-      <p class="service-desc">One focused session on your business. No fluff, no generics. A real conversation with someone who builds AI for a living.</p>
+      <p class="service-desc">One focused session on your business. A real conversation with someone who has been building AI for a living since 2019.</p>
       <ul class="service-includes">
         <li>60-minute session via Zoom or WhatsApp</li>
         <li>You talk, I listen, I ask sharp questions</li>
@@ -301,8 +350,8 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
           <li>A written summary to share with your team</li>
         </ul>
       </div>
-      <p class="service-schedule-note mono">After payment I'll reach out within 24 hours to schedule.</p>
-      <a href="YOUR_STRIPE_LINK_HERE" target="_blank" class="service-cta mono">Book now →</a>
+      <p class="service-schedule-note mono">Shortly after payment I'll reach out to schedule.</p>
+      <a href="https://buy.stripe.com/test_5kQ5kCdm8ay9fLUg2k3sI00" target="_blank" class="service-cta mono">Book now →</a>
     </div>
 
     <!-- AI Opportunity Audit -->
@@ -319,7 +368,8 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         <li>Delivered in 5–7 business days</li>
         <li>Optional 30-minute follow-up after delivery</li>
       </ul>
-      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Opportunity%20Audit%20(%E2%82%AC1500)" target="_blank" rel="noreferrer" class="service-cta mono">Start a conversation →</a>
+      <a href="https://book.stripe.com/test_cNi14mdm849L9nwcQ83sI01" target="_blank" class="service-cta mono">Book now →</a>
+      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Opportunity%20Audit%20(%E2%82%AC1500)" target="_blank" rel="noreferrer" class="service-cta mono" style="margin-top:.8rem;color:var(--muted);border-bottom-color:var(--border)">Start a conversation →</a>
     </div>
 
     <!-- AI Implementation Roadmap -->
@@ -337,7 +387,8 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         <li>Developer-ready specs your team can execute</li>
         <li>Follow-up call 2 weeks after delivery</li>
       </ul>
-      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Implementation%20Roadmap%20(%E2%82%AC4500)" target="_blank" rel="noreferrer" class="service-cta mono">Get in touch →</a>
+      <a href="https://buy.stripe.com/test_bJeeVc0zm0Xz0R05nG3sI03" target="_blank" class="service-cta mono">Book now →</a>
+      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Implementation%20Roadmap%20(%E2%82%AC4500)" target="_blank" rel="noreferrer" class="service-cta mono" style="margin-top:.8rem;color:var(--muted);border-bottom-color:var(--border)">Start a conversation →</a>
     </div>
   </div>
 </section>
@@ -348,7 +399,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
     <div class="about-left reveal">
       <p class="section-label mono">About</p>
       <h2 class="section-title serif">Engineer first. Consultant by demand.</h2>
-      <p>I'm a Full Stack GenAI Engineer with 5+ years building AI systems that actually ship — RAG pipelines, LLM agents, MLOps infrastructure, and production chatbots used by thousands of people.</p>
+      <p>I'm a Full Stack GenAI Engineer with 7+ years building AI systems that actually ship — RAG pipelines, LLM agents, MLOps infrastructure, and production chatbots used by thousands of people.</p>
       <p>I consult because people keep asking, and because I'm genuinely good at translating complex AI into decisions non-technical founders can act on.</p>
       <p>My background spans AI product work recognized at Google I/O, published research, and enterprise systems at scale. I've worked across Spain, Italy, Croatia, and remote teams internationally.</p>
       <div class="about-credentials">
@@ -364,6 +415,84 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
       <div class="skill-group"><p class="skill-group-label mono">Infrastructure</p><div class="skill-pills"><span class="pill mono">GCP</span><span class="pill mono">AWS</span><span class="pill mono">Docker</span><span class="pill mono">Terraform</span><span class="pill mono">GitHub Actions</span><span class="pill mono">FastAPI</span></div></div>
       <div class="skill-group"><p class="skill-group-label mono">AI Stack</p><div class="skill-pills"><span class="pill mono">LangChain</span><span class="pill mono">OpenAI</span><span class="pill mono">Anthropic Claude</span><span class="pill mono">Pinecone</span><span class="pill mono">Langfuse</span><span class="pill mono">HuggingFace</span></div></div>
       <div class="skill-group"><p class="skill-group-label mono">Languages & frameworks</p><div class="skill-pills"><span class="pill mono">Python</span><span class="pill mono">TypeScript</span><span class="pill mono">React</span><span class="pill mono">Node.js</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<section id="recommendations" class="recs">
+  <div class="recs-inner">
+    <div class="recs-header reveal">
+      <div>
+        <p class="section-label mono">Recommendations</p>
+        <h2 class="section-title serif">What people say after working with me</h2>
+      </div>
+      <a class="recs-link mono" href="https://www.linkedin.com/in/ema-ilic/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noreferrer">View all on LinkedIn →</a>
+    </div>
+
+    <div class="recs-carousel reveal" style="transition-delay:.1s" aria-label="LinkedIn recommendations carousel">
+      <div class="recs-track" id="recsTrack">
+        <article class="recs-slide" aria-label="Recommendation 1">
+          <p class="recs-quote">“Ema’s vibrant and uplifting presence made a lasting impression… Her growing knowledge in NLP was a tremendous asset, and she skilfully shaped our internal chatbot’s communication style to align with publisher requirements.”</p>
+          <div class="recs-meta">
+            <div class="recs-name">Darryll Colthrust</div>
+            <div class="recs-role">Co-CEO @ CHAPTR · AI Board Advisor · Angel Investor</div>
+            <div class="recs-when">Oct 29, 2024 · Managed Ema directly</div>
+          </div>
+        </article>
+
+        <article class="recs-slide" aria-label="Recommendation 2">
+          <p class="recs-quote">“Ema is an exceptional AI engineer who excels in both technical skills and team collaboration… pivotal in enhancing the conversational capabilities of the Noa chatbot… always communicative, supportive, and eager to help.”</p>
+          <div class="recs-meta">
+            <div class="recs-name">Pano Evangeliou, M.Sc.</div>
+            <div class="recs-role">Sr. AI Engineer · AI tech lead · Sr. Software Engineer</div>
+            <div class="recs-when">Oct 18, 2024 · Managed Ema directly</div>
+          </div>
+        </article>
+
+        <article class="recs-slide" aria-label="Recommendation 3">
+          <p class="recs-quote">“Ema distinguishes herself with dedicated focus on AI development and continuous pursuit of knowledge… adapting and implementing complex concepts in practical scenarios… a fantastic team player.”</p>
+          <div class="recs-meta">
+            <div class="recs-name">Dan Panu-Misailescu</div>
+            <div class="recs-role">Senior AI Software Engineer · AI Agents, LLMs, MCP, React, Next.js</div>
+            <div class="recs-when">Jan 23, 2024 · Worked together on the same team</div>
+          </div>
+        </article>
+
+        <article class="recs-slide" aria-label="Recommendation 4">
+          <p class="recs-quote">“Ema’s expertise as an AI specialist and ML engineer was outstanding… meticulous approach to problem-solving, consistently delivering innovative solutions… clear communication and commitment to staying at the forefront of AI advancements.”</p>
+          <div class="recs-meta">
+            <div class="recs-name">Anton Jonathan Goorin</div>
+            <div class="recs-role">AI Experience Designer · DevOps</div>
+            <div class="recs-when">Jan 18, 2024 · Worked together on the same team</div>
+          </div>
+        </article>
+
+        <article class="recs-slide" aria-label="Recommendation 5">
+          <p class="recs-quote">“She always came to work with a positive attitude and a desire to learn… her knowledge was instrumental in helping us understand training data needs… I would work with Ema again given an opportunity.”</p>
+          <div class="recs-meta">
+            <div class="recs-name">Ted Stresen-Reuter</div>
+            <div class="recs-role">Director of Innovation & Developer Empowerment</div>
+            <div class="recs-when">Jul 21, 2022 · Managed Ema directly</div>
+          </div>
+        </article>
+
+        <article class="recs-slide" aria-label="Recommendation 6">
+          <p class="recs-quote">“Outstanding computer vision engineer… very thorough in everything she does and can be depended upon to get the job done. Excellent and result driven… valuable contributor to our project.”</p>
+          <div class="recs-meta">
+            <div class="recs-name">Aridai Santana Gil</div>
+            <div class="recs-role">Software Engineer @ SIX</div>
+            <div class="recs-when">May 5, 2022 · Worked together on the same team</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="recs-controls">
+        <button class="recs-btn" type="button" id="recsPrev" aria-label="Previous recommendation">← Prev</button>
+        <div class="recs-dots" id="recsDots" role="tablist" aria-label="Recommendation dots"></div>
+        <button class="recs-btn" type="button" id="recsNext" aria-label="Next recommendation">Next →</button>
+        <span class="sr-only" id="recsStatus" aria-live="polite"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -396,10 +525,44 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
     <h2 class="serif">One hour. A clear answer. <em>€200.</em></h2>
     <p>No long sales process. No proposal deck. Book, send me a short brief, and we talk. You'll leave knowing exactly what AI can and can't do for your business right now.</p>
     <div class="cta-btns">
-      <a href="YOUR_STRIPE_LINK_HERE" target="_blank" class="btn-primary">→ Book the AI Hour — €200</a>
-      <a href="mailto:ema.ilic9@gmail.com" class="btn-ghost">Email me first</a>
+      <a href="https://buy.stripe.com/test_5kQ5kCdm8ay9fLUg2k3sI00" target="_blank" class="btn-primary">→ Book the AI Hour — €200</a>
+      <a href="#contact" class="btn-ghost">Email me first</a>
     </div>
-    <p class="cta-note mono">Currently taking 4 sessions per month · I'll respond within 24 hours</p>
+    <p class="cta-note mono">Currently taking 4 sessions per month · I'll respond shortly after booking</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <div class="contact-copy reveal">
+      <p class="section-label mono">Contact</p>
+      <h2 class="section-title serif">Send me a message</h2>
+      <p>If you’re not ready to book yet, tell me what you’re building and what you’re trying to achieve. I’ll reply by email.</p>
+      <div class="contact-direct">
+        <div class="label mono">Direct email</div>
+        <a class="contact-email mono" href="mailto:ema.ilic9@gmail.com">ema.ilic9@gmail.com</a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" style="transition-delay:.12s" id="contactForm">
+      <div class="field">
+        <label for="cfName">Name</label>
+        <input id="cfName" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="cfEmail">Email</label>
+        <input id="cfEmail" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="cfMessage">Message</label>
+        <textarea id="cfMessage" name="message" required placeholder="A few lines about your business, what you’re trying to do, and what you want help with."></textarea>
+      </div>
+      <div class="contact-actions">
+        <button class="btn-primary" type="submit">→ Send message</button>
+        <div class="form-note mono">This opens your email app with a prefilled message.</div>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -409,7 +572,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   <div class="footer-links">
     <a href="https://linkedin.com/in/ema-ilic" target="_blank" rel="noreferrer">LinkedIn</a>
     <a href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer">Medium</a>
-    <a href="mailto:ema.ilic9@gmail.com">Email</a>
+    <a href="#contact">Email</a>
     <a href="https://wa.me/385993749704" target="_blank" rel="noreferrer">WhatsApp</a>
   </div>
 </footer>
@@ -422,6 +585,113 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
+
+// Recommendations carousel
+(() => {
+  const track = document.getElementById('recsTrack');
+  const prevBtn = document.getElementById('recsPrev');
+  const nextBtn = document.getElementById('recsNext');
+  const dotsWrap = document.getElementById('recsDots');
+  const status = document.getElementById('recsStatus');
+  if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+  const slides = Array.from(track.querySelectorAll('.recs-slide'));
+  if (slides.length <= 1) return;
+
+  let idx = 0;
+  let timer = null;
+  const AUTOPLAY_MS = 9000;
+
+  const setStatus = () => {
+    if (status) status.textContent = `Recommendation ${idx + 1} of ${slides.length}`;
+  };
+
+  const render = () => {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('button').forEach((b, i) => {
+      b.setAttribute('aria-current', i === idx ? 'true' : 'false');
+    });
+    setStatus();
+  };
+
+  const go = (next) => {
+    idx = (next + slides.length) % slides.length;
+    render();
+  };
+
+  // dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'recs-dot';
+    dot.setAttribute('aria-label', `Go to recommendation ${i + 1}`);
+    dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+    dot.addEventListener('click', () => { go(i); restart(); });
+    dotsWrap.appendChild(dot);
+  });
+
+  prevBtn.addEventListener('click', () => { go(idx - 1); restart(); });
+  nextBtn.addEventListener('click', () => { go(idx + 1); restart(); });
+
+  // keyboard support on carousel
+  const carousel = track.closest('.recs-carousel');
+  if (carousel) {
+    carousel.tabIndex = 0;
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx - 1); restart(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(idx + 1); restart(); }
+    });
+  }
+
+  const start = () => {
+    stop();
+    timer = window.setInterval(() => go(idx + 1), AUTOPLAY_MS);
+  };
+  const stop = () => {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  };
+  const restart = () => start();
+
+  // pause on hover / focus
+  const pauseTargets = [carousel, prevBtn, nextBtn, dotsWrap].filter(Boolean);
+  pauseTargets.forEach((el) => {
+    el.addEventListener('mouseenter', stop);
+    el.addEventListener('mouseleave', start);
+    el.addEventListener('focusin', stop);
+    el.addEventListener('focusout', start);
+  });
+
+  setStatus();
+  render();
+  start();
+})();
+
+// Contact form (no backend): opens prefilled email
+(() => {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const to = 'ema.ilic9@gmail.com';
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = (document.getElementById('cfName')?.value || '').trim();
+    const email = (document.getElementById('cfEmail')?.value || '').trim();
+    const message = (document.getElementById('cfMessage')?.value || '').trim();
+
+    const subject = `Website inquiry — ${name || 'New message'}`;
+    const body = [
+      message,
+      '',
+      '—',
+      `Name: ${name || ''}`,
+      `Email: ${email || ''}`,
+    ].join('\n');
+
+    const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  });
+})();
 </script>
 </body>
 </html>
