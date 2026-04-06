@@ -173,6 +173,9 @@ section{padding:6rem 3rem}
 .portfolio-dot{width:7px;height:7px;border-radius:999px;border:1px solid var(--dim);background:transparent;cursor:pointer;transition:all .2s}
 .portfolio-dot[aria-current="true"]{background:var(--accent);border-color:var(--accent)}
 .portfolio-dot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.portfolio-industries{margin-top:-.5rem;margin-bottom:2.5rem}
+.portfolio-industries-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+.portfolio-industries .pill{font-size:.62rem;color:var(--text);border-color:var(--dim);padding:.25rem .65rem}
 
 /* RECOMMENDATIONS */
 .recs{background:var(--bg2)}
@@ -297,7 +300,8 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   <p class="hero-sub">Most clients leave the call with a decision they’d been circling for weeks.</p>
   <p class="hero-sub">I’m a GenAI engineer. I build production systems and help teams make practical calls: what to build, what to skip, and what “good” looks like. Book a 60-minute AI Hour for a direct, specific answer on a business use case, or on your learning plan if you’re moving into AI.</p>
   <div class="hero-proof">
-    <div class="proof-item"><span class="proof-num serif">7+</span><span class="proof-label mono">Years in production AI</span></div>
+    <div class="proof-item"><span class="proof-num serif">2019</span><span class="proof-label mono">In AI since</span></div>
+    <div class="proof-item"><span class="proof-num serif">9,000+</span><span class="proof-label mono">Production hours</span></div>
     <div class="proof-item"><span class="proof-num serif">1,000+</span><span class="proof-label mono">Monthly active users</span></div>
     <div class="proof-item"><span class="proof-num serif">6</span><span class="proof-label mono">Enterprise clients</span></div>
   </div>
@@ -585,6 +589,21 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
       <a class="portfolio-link mono" href="https://www.linkedin.com/in/ema-ilic/" target="_blank" rel="noreferrer">Full history on LinkedIn →</a>
     </div>
 
+    <div class="portfolio-industries reveal" style="transition-delay:.05s">
+      <p class="portfolio-industries-label mono">Industries</p>
+      <div class="skill-pills">
+        <span class="pill mono">Publishing</span>
+        <span class="pill mono">Luxury Retail</span>
+        <span class="pill mono">IoT</span>
+        <span class="pill mono">Biopharma</span>
+        <span class="pill mono">DevTools</span>
+        <span class="pill mono">Solar Energy</span>
+        <span class="pill mono">Construction</span>
+        <span class="pill mono">NLP &amp; Translation</span>
+        <span class="pill mono">Environmental Science</span>
+      </div>
+    </div>
+
     <div class="portfolio-carousel reveal" style="transition-delay:.1s" aria-label="Portfolio carousel">
       <div class="portfolio-track" id="portfolioTrack">
 
@@ -627,9 +646,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
             <span class="portfolio-company mono">Sigma Software Group</span>
             <span class="portfolio-date mono">May 2025 – Present</span>
           </div>
-          <h3 class="portfolio-role serif">Senior ML Engineer &amp; Advisor</h3>
+          <h3 class="portfolio-role serif">Senior AI/ML Engineer &amp; Advisor</h3>
           <p class="portfolio-location mono">Remote</p>
-          <p class="portfolio-narrative">I help clients figure out where AI fits and design the cloud-based architectures to back it up. That means technical roadmaps, evaluating tools like GitHub Copilot and Amazon Q, and writing infrastructure proposals for things like recommender engines, chatbots, forecasting models and data pipelines.</p>
+          <p class="portfolio-narrative">Advised 6+ clients across IoT, e-commerce, solar energy, and tech startups. For one client I wrote an AI analytics proposal for a water utility’s leak detection system. For another I scoped and estimated a full AI chatbot and content generation pipeline for a luxury e-commerce platform. I also ran a comparative evaluation of 14 AI tools for data engineering and analytics adoption.</p>
           <div class="portfolio-tech">
             <span class="pill mono">AWS</span><span class="pill mono">Python</span><span class="pill mono">GCP</span><span class="pill mono">AI Advisory</span><span class="pill mono">Infrastructure</span>
           </div>
