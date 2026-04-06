@@ -295,6 +295,36 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   gtag('js', new Date());
   gtag('config', 'G-NSL4PVC1VB');
 </script>
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {
+  "siteId":4487192,
+  "cookiePolicyId":83116177,
+  "lang":"en",
+  "storage":{"useSiteId":true},
+  "banner":{
+    "position":"float-bottom-center",
+    "acceptButtonDisplay":true,
+    "customizeButtonDisplay":true,
+    "rejectButtonDisplay":true,
+    "closeButtonDisplay":false,
+    "fontSizeBody":"12px",
+    "backgroundColor":"#1c1a16",
+    "textColor":"#8a8278",
+    "acceptButtonColor":"#c8a96e",
+    "acceptButtonCaptionColor":"#0f0e0c",
+    "customizeButtonColor":"transparent",
+    "customizeButtonCaptionColor":"#8a8278",
+    "customizeButtonBorder":"1px solid #2a2620",
+    "rejectButtonColor":"transparent",
+    "rejectButtonCaptionColor":"#4a4540",
+    "rejectButtonBorder":"1px solid #2a2620"
+  }
+};
+</script>
+<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4487192.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 <body>
 
@@ -1041,34 +1071,32 @@ reveals.forEach(el => observer.observe(el));
   updateWhatsAppHref();
 })();
 
-// GA4 event tracking
+// GA4 event tracking — each action fires its own event name
 (() => {
-  const track = (action, label) => {
-    if (typeof gtag === 'function') gtag('event', action, { event_label: label });
+  const track = (name) => {
+    if (typeof gtag === 'function') gtag('event', name);
   };
 
   document.querySelectorAll('[data-track]').forEach(el => {
-    el.addEventListener('click', () => track('cta_click', el.dataset.track));
+    el.addEventListener('click', () => track('click_' + el.dataset.track));
   });
 
-  // Scroll depth tracking (25%, 50%, 75%, 100%)
   const fired = {};
   window.addEventListener('scroll', () => {
     const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
     [25, 50, 75, 100].forEach(t => {
       if (pct >= t && !fired[t]) {
         fired[t] = true;
-        track('scroll_depth', `${t}%`);
+        track('scroll_' + t);
       }
     });
   }, { passive: true });
 
-  // Section visibility tracking
   const sections = document.querySelectorAll('[data-section]');
   const sectionObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        track('section_view', e.target.dataset.section);
+        track('view_' + e.target.dataset.section);
         sectionObs.unobserve(e.target);
       }
     });
