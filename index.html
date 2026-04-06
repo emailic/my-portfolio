@@ -145,6 +145,35 @@ section{padding:6rem 3rem}
 .article-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400}
 .article-tag{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
+/* PORTFOLIO */
+.portfolio{background:var(--surface)}
+.portfolio-inner{max-width:900px;margin:0 auto}
+.portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+.portfolio-link{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.portfolio-link:hover{color:var(--accent)}
+.portfolio-carousel{border:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
+.portfolio-track{display:flex;transition:transform .5s ease;will-change:transform}
+.portfolio-slide{min-width:100%;padding:2.5rem 2.5rem 2rem}
+.portfolio-topline{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.portfolio-company{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.portfolio-date{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--dim);letter-spacing:.06em}
+.portfolio-role{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;line-height:1.25;margin-bottom:.25rem}
+.portfolio-location{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--dim);letter-spacing:.06em;margin-bottom:1.2rem}
+.portfolio-narrative{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:1.4rem}
+.portfolio-tech{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.4rem}
+.portfolio-tech .pill{font-size:.6rem;padding:.2rem .55rem}
+.portfolio-links{display:flex;gap:1rem;flex-wrap:wrap}
+.portfolio-ext{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--dim);padding-bottom:.15rem;transition:all .2s}
+.portfolio-ext:hover{border-color:var(--accent)}
+.portfolio-controls{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;border-top:1px solid var(--border);background:var(--bg2)}
+.portfolio-btn{appearance:none;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem .9rem;cursor:pointer;transition:all .2s}
+.portfolio-btn:hover{color:var(--text);border-color:var(--dim)}
+.portfolio-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.portfolio-dots{display:flex;gap:.45rem;align-items:center;justify-content:center;flex:1}
+.portfolio-dot{width:7px;height:7px;border-radius:999px;border:1px solid var(--dim);background:transparent;cursor:pointer;transition:all .2s}
+.portfolio-dot[aria-current="true"]{background:var(--accent);border-color:var(--accent)}
+.portfolio-dot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
 /* RECOMMENDATIONS */
 .recs{background:var(--bg2)}
 .recs-inner{max-width:900px;margin:0 auto}
@@ -229,6 +258,10 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   .cta-bg-text{display:none}
   .article-row{grid-template-columns:auto 1fr}
   .article-tag{display:none}
+  .portfolio-slide{padding:1.8rem 1.4rem 1.4rem}
+  .portfolio-controls{padding:.9rem 1rem}
+  .portfolio-topline{flex-direction:column;gap:.3rem}
+  .portfolio-header{flex-direction:column;gap:.8rem;align-items:flex-start}
   .recs-slide{padding:1.8rem 1.4rem 1.4rem}
   .recs-controls{padding:.9rem 1rem}
   .recs-quote{font-size:1.2rem}
@@ -541,13 +574,153 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   </div>
 </section>
 
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio">
+  <div class="portfolio-inner">
+    <div class="portfolio-header reveal">
+      <div>
+        <p class="section-label mono">Portfolio</p>
+        <h2 class="section-title serif">Selected work</h2>
+      </div>
+      <a class="portfolio-link mono" href="https://www.linkedin.com/in/ema-ilic/" target="_blank" rel="noreferrer">Full history on LinkedIn →</a>
+    </div>
+
+    <div class="portfolio-carousel reveal" style="transition-delay:.1s" aria-label="Portfolio carousel">
+      <div class="portfolio-track" id="portfolioTrack">
+
+        <article class="portfolio-slide" aria-label="Evinced">
+          <div class="portfolio-topline">
+            <span class="portfolio-company mono">Evinced</span>
+            <span class="portfolio-date mono">Aug 2025 – Mar 2026</span>
+          </div>
+          <h3 class="portfolio-role serif">GenAI Engineer</h3>
+          <p class="portfolio-location mono">Tel Aviv, Israel · Remote</p>
+          <p class="portfolio-narrative">Evinced builds tools that help developers ship accessible software. I designed the backend for their chatbot and MCP integrations, and ran the research side, testing ways to make accessibility tooling more useful for developers. In benchmarks, accessibility experts preferred the chatbot's answers 3x over standard AI.</p>
+          <div class="portfolio-tech">
+            <span class="pill mono">TypeScript</span><span class="pill mono">React</span><span class="pill mono">Node.js</span><span class="pill mono">Python</span><span class="pill mono">GCP</span><span class="pill mono">MCP</span><span class="pill mono">LLMs</span>
+          </div>
+          <div class="portfolio-links">
+            <a class="portfolio-ext" href="https://www.evinced.com/products/chatbot" target="_blank" rel="noreferrer">Chatbot product →</a>
+            <a class="portfolio-ext" href="https://www.evinced.com/" target="_blank" rel="noreferrer">Evinced.com →</a>
+          </div>
+        </article>
+
+        <article class="portfolio-slide" aria-label="CHAPTR">
+          <div class="portfolio-topline">
+            <span class="portfolio-company mono">CHAPTR · A Holtzbrinck Business</span>
+            <span class="portfolio-date mono">Nov 2022 – Oct 2024</span>
+          </div>
+          <h3 class="portfolio-role serif">AI/ML Engineer, Generative AI</h3>
+          <p class="portfolio-location mono">Rijeka, Croatia · Remote</p>
+          <p class="portfolio-narrative">Two projects over two years at this AI startup backed by Holtzbrinck Publishing Group. Noa was a publisher-facing chatbot I helped scale to 1,000+ monthly active users. I built the RAG pipelines with Pinecone and OpenAI and designed the evaluation systems that kept answer quality high. Stori was a children’s storybook app that generated copy and illustrations on the fly. I built the image pipeline with Stable Diffusion and DreamBooth. It was featured at Google I/O 2023.</p>
+          <div class="portfolio-tech">
+            <span class="pill mono">Python</span><span class="pill mono">LangChain</span><span class="pill mono">Langfuse</span><span class="pill mono">Pinecone</span><span class="pill mono">GCP</span><span class="pill mono">Terraform</span><span class="pill mono">Docker</span><span class="pill mono">OpenAI</span><span class="pill mono">Stable Diffusion</span>
+          </div>
+          <div class="portfolio-links">
+            <a class="portfolio-ext" href="https://www.chaptr.ai/" target="_blank" rel="noreferrer">CHAPTR.ai →</a>
+            <a class="portfolio-ext" href="https://www.linkedin.com/feed/update/urn:li:activity:7062125693408587776/?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noreferrer">Stori at Google I/O 2023 →</a>
+          </div>
+        </article>
+
+        <article class="portfolio-slide" aria-label="Sigma Software Group">
+          <div class="portfolio-topline">
+            <span class="portfolio-company mono">Sigma Software Group</span>
+            <span class="portfolio-date mono">May 2025 – Present</span>
+          </div>
+          <h3 class="portfolio-role serif">Senior ML Engineer &amp; Advisor</h3>
+          <p class="portfolio-location mono">Remote</p>
+          <p class="portfolio-narrative">I help clients figure out where AI fits and design the cloud-based architectures to back it up. That means technical roadmaps, evaluating tools like GitHub Copilot and Amazon Q, and writing infrastructure proposals for things like recommender engines, chatbots, forecasting models and data pipelines.</p>
+          <div class="portfolio-tech">
+            <span class="pill mono">AWS</span><span class="pill mono">Python</span><span class="pill mono">GCP</span><span class="pill mono">AI Advisory</span><span class="pill mono">Infrastructure</span>
+          </div>
+          <div class="portfolio-links">
+            <a class="portfolio-ext" href="https://www.sigma.software/" target="_blank" rel="noreferrer">Sigma Software →</a>
+          </div>
+        </article>
+
+        <article class="portfolio-slide" aria-label="Notch">
+          <div class="portfolio-topline">
+            <span class="portfolio-company mono">Notch</span>
+            <span class="portfolio-date mono">Apr 2025</span>
+          </div>
+          <h3 class="portfolio-role serif">AI Solutions Consultant</h3>
+          <p class="portfolio-location mono">Zagreb, Croatia · Remote</p>
+          <p class="portfolio-narrative">Pre-sales engagement for a pharma company building a bioprocess simulation platform. I mapped out the ML use cases (sensitivity analysis, automated retraining, model lifecycle management) and proposed assistant features for simulation and experiment design that fit within their regulatory constraints.</p>
+          <div class="portfolio-tech">
+            <span class="pill mono">AI Strategy</span><span class="pill mono">MLOps</span><span class="pill mono">Pre-Sales</span><span class="pill mono">Biotech</span>
+          </div>
+          <div class="portfolio-links">
+            <a class="portfolio-ext" href="https://wearenotch.com/" target="_blank" rel="noreferrer">Notch →</a>
+          </div>
+        </article>
+
+        <article class="portfolio-slide" aria-label="Pangeanic">
+          <div class="portfolio-topline">
+            <span class="portfolio-company mono">Pangeanic Language Technologies</span>
+            <span class="portfolio-date mono">Jul 2021 – Mar 2022</span>
+          </div>
+          <h3 class="portfolio-role serif">NLP Scientist (LLMs)</h3>
+          <p class="portfolio-location mono">Valencia, Spain</p>
+          <p class="portfolio-narrative">I fine-tuned BERT and GPT-2 for multilabel text classification, hitting 99% accuracy and 98% F1. We compared transformer models against traditional classifiers across several datasets and published the results at SwissText 2022 in Lugano, Switzerland.</p>
+          <div class="portfolio-tech">
+            <span class="pill mono">Python</span><span class="pill mono">BERT</span><span class="pill mono">GPT-2</span><span class="pill mono">HuggingFace</span><span class="pill mono">PyTorch</span><span class="pill mono">Scikit-Learn</span>
+          </div>
+          <div class="portfolio-links">
+            <a class="portfolio-ext" href="https://ceur-ws.org/Vol-3361/" target="_blank" rel="noreferrer">SwissText 2022 paper →</a>
+          </div>
+        </article>
+
+        <article class="portfolio-slide" aria-label="ULPGC Research">
+          <div class="portfolio-topline">
+            <span class="portfolio-company mono">University of Las Palmas de Gran Canaria</span>
+            <span class="portfolio-date mono">Jan 2022 – Oct 2022</span>
+          </div>
+          <h3 class="portfolio-role serif">Research Scientist, Computer Vision</h3>
+          <p class="portfolio-location mono">Las Palmas, Canary Islands, Spain</p>
+          <p class="portfolio-narrative">I built a computer vision pipeline to detect and classify microplastics collected on Canary Islands beaches. It used YOLOv5 for detection, UNET for segmentation, and VGG16 for classification. The final model hit 96.41% F1, which was 3.6x better than the previous best.</p>
+          <div class="portfolio-tech">
+            <span class="pill mono">Python</span><span class="pill mono">YOLOv5</span><span class="pill mono">PyTorch</span><span class="pill mono">TensorFlow</span><span class="pill mono">UNET</span><span class="pill mono">VGG16</span>
+          </div>
+          <div class="portfolio-links">
+            <a class="portfolio-ext" href="https://github.com/emailic/YOLOv5-Microplasticos" target="_blank" rel="noreferrer">GitHub repo →</a>
+          </div>
+        </article>
+
+        <article class="portfolio-slide" aria-label="Secret Source">
+          <div class="portfolio-topline">
+            <span class="portfolio-company mono">Secret Source S.L.</span>
+            <span class="portfolio-date mono">Sep 2021 – Dec 2021</span>
+          </div>
+          <h3 class="portfolio-role serif">Computer Vision Engineer</h3>
+          <p class="portfolio-location mono">Las Palmas, Canary Islands, Spain</p>
+          <p class="portfolio-narrative">I built the ML backend for classifying 40+ types of construction machinery using ResNet34, 50, and 101. The model ended up shipping as an Android app for on-site identification.</p>
+          <div class="portfolio-tech">
+            <span class="pill mono">Python</span><span class="pill mono">Fast.ai</span><span class="pill mono">PyTorch</span><span class="pill mono">ResNet</span><span class="pill mono">TensorFlow</span><span class="pill mono">Pandas</span>
+          </div>
+          <div class="portfolio-links">
+            <a class="portfolio-ext" href="https://wmit.nocn.org/demo" target="_blank" rel="noreferrer">Project demo →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="portfolio-controls">
+        <button class="portfolio-btn" type="button" id="portfolioPrev" aria-label="Previous project">← Prev</button>
+        <div class="portfolio-dots" id="portfolioDots" role="tablist" aria-label="Portfolio dots"></div>
+        <button class="portfolio-btn" type="button" id="portfolioNext" aria-label="Next project">Next →</button>
+        <span class="sr-only" id="portfolioStatus" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WRITING -->
 <section id="writing" class="writing">
   <div class="writing-inner">
     <div class="writing-header reveal">
       <div>
         <p class="section-label mono">Writing</p>
-        <h2 class="section-title serif">Writing on AI</h2>
+        <h2 class="section-title serif">Read my blog posts on AI</h2>
       </div>
       <a href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer" class="writing-link mono">All articles →</a>
     </div>
@@ -677,6 +850,78 @@ reveals.forEach(el => observer.observe(el));
   const restart = () => start();
 
   // pause on hover / focus
+  const pauseTargets = [carousel, prevBtn, nextBtn, dotsWrap].filter(Boolean);
+  pauseTargets.forEach((el) => {
+    el.addEventListener('mouseenter', stop);
+    el.addEventListener('mouseleave', start);
+    el.addEventListener('focusin', stop);
+    el.addEventListener('focusout', start);
+  });
+
+  setStatus();
+  render();
+  start();
+})();
+
+// Portfolio carousel
+(() => {
+  const track = document.getElementById('portfolioTrack');
+  const prevBtn = document.getElementById('portfolioPrev');
+  const nextBtn = document.getElementById('portfolioNext');
+  const dotsWrap = document.getElementById('portfolioDots');
+  const status = document.getElementById('portfolioStatus');
+  if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+  const slides = Array.from(track.querySelectorAll('.portfolio-slide'));
+  if (slides.length <= 1) return;
+
+  let idx = 0;
+  let timer = null;
+  const AUTOPLAY_MS = 12000;
+
+  const setStatus = () => {
+    if (status) status.textContent = `Project ${idx + 1} of ${slides.length}`;
+  };
+
+  const render = () => {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('button').forEach((b, i) => {
+      b.setAttribute('aria-current', i === idx ? 'true' : 'false');
+    });
+    setStatus();
+  };
+
+  const go = (next) => {
+    idx = (next + slides.length) % slides.length;
+    render();
+  };
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'portfolio-dot';
+    dot.setAttribute('aria-label', `Go to project ${i + 1}`);
+    dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+    dot.addEventListener('click', () => { go(i); restart(); });
+    dotsWrap.appendChild(dot);
+  });
+
+  prevBtn.addEventListener('click', () => { go(idx - 1); restart(); });
+  nextBtn.addEventListener('click', () => { go(idx + 1); restart(); });
+
+  const carousel = track.closest('.portfolio-carousel');
+  if (carousel) {
+    carousel.tabIndex = 0;
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx - 1); restart(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(idx + 1); restart(); }
+    });
+  }
+
+  const start = () => { stop(); timer = window.setInterval(() => go(idx + 1), AUTOPLAY_MS); };
+  const stop = () => { if (timer) window.clearInterval(timer); timer = null; };
+  const restart = () => start();
+
   const pauseTargets = [carousel, prevBtn, nextBtn, dotsWrap].filter(Boolean);
   pauseTargets.forEach((el) => {
     el.addEventListener('mouseenter', stop);

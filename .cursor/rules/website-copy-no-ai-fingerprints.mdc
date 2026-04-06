@@ -1,0 +1,32 @@
+---
+description: Keep website copy natural and human, avoiding AI writing fingerprints
+globs: **/*.{html,md,mdx,txt}
+alwaysApply: false
+---
+
+# Website Copy: No AI Fingerprints
+
+Write copy that sounds like a real person talking to another real person.
+
+## Avoid these patterns
+
+- Lexical tics: delve, seamlessly, unlock, leverage, empower, elevate, comprehensive, robust, cutting-edge, game-changer, innovative, streamline, harness, utilize.
+- Stock openers: "In today's fast-paced world", "As we navigate", "It's worth noting", "It's important to understand", "Whether you're a X or Y", "Imagine a world where", "Here's the thing:".
+- Repetitive structures: frequent em dashes, forced lists of three, rhetorical question then immediate answer, "not just X, but Y", sentence fragments used for drama.
+- Tone markers: "Absolutely!", "no fluff", "let's dive in", repeated hedging words like essentially/fundamentally/ultimately, passive voice when active voice is clearer.
+- Buzzword clusters: "at its core", "end-to-end", "best-in-class", "purpose-built".
+
+## Preferred style
+
+- Use plain words instead of jargon.
+- Be specific and concrete; avoid vague claims.
+- Vary sentence openings and sentence lengths naturally.
+- Use active voice and direct phrasing.
+- Keep rhythm conversational, clear, and grounded.
+
+## Quick self-check before finalizing
+
+1. Remove banned words and stock intros.
+2. Replace buzzword phrases with simple language.
+3. Break repetitive structure patterns.
+4. Read it out loud; if it sounds scripted, rewrite.
