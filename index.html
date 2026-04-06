@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ema Ilic · AI Consulting</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='64'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230f0e0c'/%3E%3Ctext%20x='32'%20y='36'%20text-anchor='middle'%20font-family='system-ui,%20-apple-system,%20Segoe%20UI,%20Roboto,%20Helvetica,%20Arial,%20sans-serif'%20font-size='28'%20font-weight='700'%20fill='%23c8a96e'%3EEI%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Book the AI Hour: a focused 60-minute session for AI strategy, technical direction, or mentoring with a GenAI engineer who ships production systems.">
+<meta name="description" content="Book the AI Hour: a focused 60-minute session where a GenAI engineer helps you decide what AI to build, what to skip, and where to start.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -72,6 +72,18 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .for-you-list li::before{content:'→';color:var(--accent);flex-shrink:0;margin-top:.05rem}
 .for-you-list.not li::before{content:'✕';color:var(--dim)}
 .for-you-divider{width:1px;background:var(--border);align-self:stretch;margin:0}
+
+/* OUTCOMES */
+.outcomes{background:var(--surface);padding:5rem 3rem}
+.outcomes-inner{max-width:900px;margin:0 auto}
+.outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3rem;background:var(--border)}
+.outcome-card{background:var(--surface);padding:2rem 1.8rem}
+.outcome-stat{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--accent);line-height:1;margin-bottom:.6rem}
+.outcome-desc{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:.6rem}
+.outcome-client{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+/* GUARANTEE */
+.guarantee{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--accent);border:1px solid var(--border);padding:.7rem 1rem;margin-top:1.5rem;display:inline-block;line-height:1.5}
 
 /* SECTION COMMONS */
 section{padding:6rem 3rem}
@@ -253,6 +265,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   .hero-grid-line{display:none}
   .for-you-inner{grid-template-columns:1fr;gap:2.5rem}
   .for-you-divider{display:none}
+  .outcomes-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .services-grid{grid-template-columns:1fr}
   .about-wrap{grid-template-columns:1fr;gap:3rem}
@@ -280,7 +293,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-NSL4PVC1VB');
 </script>
 </head>
 <body>
@@ -288,7 +301,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">Ema Ilic</a>
-  <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="nav-cta">Book the AI Hour · €200</a>
+  <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="nav-cta" data-track="nav_book">Book the AI Hour · €200</a>
 </nav>
 
 <!-- HERO -->
@@ -298,7 +311,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   <p class="hero-label mono">AI Consulting · Currently Available</p>
   <h1 class="serif">Everyone is talking about AI.<br><em>Let’s turn it into a clear decision.</em></h1>
   <p class="hero-sub">Most clients leave the call with a decision they’d been circling for weeks.</p>
-  <p class="hero-sub">I’m a GenAI engineer. I build production systems and help teams make practical calls: what to build, what to skip, and what “good” looks like. Book a 60-minute AI Hour for a direct, specific answer on a business use case, or on your learning plan if you’re moving into AI.</p>
+  <p class="hero-sub">I’m a GenAI engineer. I build production systems and help teams make practical calls: what to build, what to skip, and what “good” looks like. Book a 60-minute AI Hour for a direct, specific answer on your business use case.</p>
   <div class="hero-proof">
     <div class="proof-item"><span class="proof-num serif">2019</span><span class="proof-label mono">In AI since</span></div>
     <div class="proof-item"><span class="proof-num serif">9,000+</span><span class="proof-label mono">Production hours</span></div>
@@ -306,10 +319,10 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
     <div class="proof-item"><span class="proof-num serif">6</span><span class="proof-label mono">Enterprise clients</span></div>
   </div>
   <div class="hero-ctas">
-    <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="btn-primary">→ Book the AI Hour · €200</a>
-    <a href="#services" class="btn-ghost">See all services</a>
+    <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="btn-primary" data-track="hero_book">→ Book the AI Hour · €200</a>
+    <a href="#services" class="btn-ghost" data-track="hero_services">See all services</a>
   </div>
-  <a class="hero-proof-link mono" href="#recommendations">What clients say →</a>
+  <a class="hero-proof-link mono" data-track="hero_testimonials" href="#recommendations">What clients say →</a>
 </section>
 
 <!-- TICKER -->
@@ -321,7 +334,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 </div>
 
 <!-- WHO THIS IS FOR -->
-<div class="for-you">
+<div class="for-you" data-section="for_you">
   <div class="for-you-inner">
     <div class="for-you-col reveal">
       <p class="section-label mono">This is for you if</p>
@@ -342,22 +355,46 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         <li>You want someone to promise AI will save your business overnight</li>
         <li>You want someone to skip the thinking and just start building</li>
         <li>You're looking for someone to validate a decision you've already made</li>
-        <li>You want generic career advice without doing the work (projects, practice, iteration)</li>
         <li>You want generic AI inspiration you could get from a blog post</li>
       </ul>
     </div>
   </div>
 </div>
 
+<!-- OUTCOMES -->
+<div class="outcomes" data-section="outcomes">
+  <div class="outcomes-inner reveal">
+    <p class="section-label mono">Results</p>
+    <h2 class="section-title serif">What happened after clients got a clear answer</h2>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-stat serif">3x</div>
+        <div class="outcome-desc">Accessibility experts preferred the chatbot I designed over standard AI answers, in blind benchmarks.</div>
+        <div class="outcome-client">DevTools company · Tel Aviv</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-stat serif">1,000+</div>
+        <div class="outcome-desc">Monthly active users on a publisher chatbot I built with RAG pipelines and evaluation systems that kept answer quality high.</div>
+        <div class="outcome-client">Publishing startup · Holtzbrinck Group</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-stat serif">14</div>
+        <div class="outcome-desc">AI tools evaluated head-to-head for a client choosing between build, buy, or wait. They picked two and skipped twelve.</div>
+        <div class="outcome-client">IoT &amp; analytics company</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- RECOMMENDATIONS -->
-<section id="recommendations" class="recs">
+<section id="recommendations" data-section="recommendations" class="recs">
   <div class="recs-inner">
     <div class="recs-header reveal">
       <div>
         <p class="section-label mono">Recommendations</p>
         <h2 class="section-title serif">What people say after working with me</h2>
       </div>
-      <a class="recs-link mono" href="https://www.linkedin.com/in/ema-ilic/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noreferrer">View all on LinkedIn →</a>
+      <a class="recs-link mono" data-track="linkedin_recs" href="https://www.linkedin.com/in/ema-ilic/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noreferrer">View all on LinkedIn →</a>
     </div>
 
     <div class="recs-carousel reveal" style="transition-delay:.1s" aria-label="LinkedIn recommendations carousel">
@@ -437,7 +474,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 </section>
 
 <!-- HOW IT WORKS -->
-<div class="how-it-works">
+<div class="how-it-works" data-section="how_it_works">
   <div class="how-inner reveal">
     <p class="section-label mono">How it works</p>
     <h2 class="section-title serif">Here's what actually happens.</h2>
@@ -462,7 +499,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 </div>
 
 <!-- SERVICES -->
-<section id="services" class="services">
+<section id="services" data-section="services" class="services">
   <div class="services-intro reveal">
     <p class="section-label mono">Services</p>
     <h2 class="section-title serif">Three ways to work together</h2>
@@ -476,24 +513,25 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
       <p class="service-tag mono">Start here</p>
       <h3 class="service-name serif">The AI Hour</h3>
       <div class="service-price serif">€200 <span>/ 60 min</span></div>
-      <p class="service-desc">One focused session on your business or your AI career path. You bring context; I’ll help you pressure-test the idea and leave with next steps.</p>
+      <p class="service-desc">One focused session on your business. You bring context; I’ll help you pressure-test the idea and leave with next steps.</p>
       <ul class="service-includes">
         <li>60-minute session via Google Meets or WhatsApp</li>
         <li>You talk, I listen, I ask sharp questions</li>
-        <li>Tailored to your business goals or mentoring goals</li>
+        <li>Tailored to your specific business situation</li>
         <li>Written action summary delivered after the call</li>
       </ul>
       <div class="you-get">
         <p class="you-get-label mono">You leave with</p>
         <ul class="you-get-items">
-          <li>3–5 concrete AI opportunities (or a focused learning/project plan)</li>
+          <li>3–5 concrete AI opportunities ranked by effort vs. value</li>
           <li>Honest verdict on what's worth building and what isn't</li>
           <li>Suggested tools, approaches, and first steps</li>
           <li>A written summary to share with your team</li>
         </ul>
       </div>
       <p class="service-schedule-note mono">You’ll receive a scheduling link shortly after payment.</p>
-      <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="service-cta mono">Book now →</a>
+      <div class="guarantee">If after 20 minutes you feel this isn’t useful, we stop and I refund you in full.</div>
+      <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="service-cta mono" data-track="service_book">Book now →</a>
     </div>
 
     <!-- AI Opportunity Audit -->
@@ -510,9 +548,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         <li>Delivered in 5-10 business days</li>
         <li>Optional 30-minute follow-up after delivery</li>
       </ul>
-      <a href="https://book.stripe.com/9B65kC2AafM43dPbLke7m01" target="_blank" class="service-cta mono">Book now →</a>
+      <a href="https://book.stripe.com/9B65kC2AafM43dPbLke7m01" target="_blank" class="service-cta mono" data-track="service_book">Book now →</a>
       <p class="availability-note">1 engagement open per month</p>
-      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Opportunity%20Audit%20(%E2%82%AC1500)" target="_blank" rel="noreferrer" class="service-cta mono" style="margin-top:.8rem;color:var(--muted);border-bottom-color:var(--border)">Start a conversation →</a>
+      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Opportunity%20Audit%20(%E2%82%AC1500)" target="_blank" rel="noreferrer" class="service-cta mono" data-track="service_conversation" style="margin-top:.8rem;color:var(--muted);border-bottom-color:var(--border)">Start a conversation →</a>
     </div>
 
     <!-- AI Implementation Roadmap -->
@@ -530,25 +568,26 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         <li>Developer-ready specs: system architecture, component breakdown, API integration points, recommended libraries, and a suggested build sequence with effort estimates (not source code)</li>
         <li>Follow-up call 2 weeks after delivery</li>
       </ul>
-      <a href="https://buy.stripe.com/7sY28q2Aa43m6q15mWe7m00" target="_blank" class="service-cta mono">Book now →</a>
+      <a href="https://buy.stripe.com/7sY28q2Aa43m6q15mWe7m00" target="_blank" class="service-cta mono" data-track="service_book">Book now →</a>
       <p class="availability-note">1 engagement open per month</p>
-      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Implementation%20Roadmap%20(%E2%82%AC4500)" target="_blank" rel="noreferrer" class="service-cta mono" style="margin-top:.8rem;color:var(--muted);border-bottom-color:var(--border)">Start a conversation →</a>
+      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Implementation%20Roadmap%20(%E2%82%AC4500)" target="_blank" rel="noreferrer" class="service-cta mono" data-track="service_conversation" style="margin-top:.8rem;color:var(--muted);border-bottom-color:var(--border)">Start a conversation →</a>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section class="cta-section" data-section="cta">
   <div class="cta-bg-text serif">Hour</div>
   <div class="cta-inner reveal">
     <p class="section-label mono">Ready?</p>
     <h2 class="serif">One hour. A clear answer. <em>€200.</em></h2>
-    <p>No sales process. No proposal deck. Book, send a short brief, and we talk. You’ll leave with a straight answer on what AI is worth for your business, or what to focus on next if you’re aiming for an AI engineering role.</p>
+    <p>No sales process. No proposal deck. Book, send a short brief, and we talk. You’ll leave with a straight answer on what AI is worth for your business and exactly where to start.</p>
     <div class="cta-btns">
-      <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="btn-primary">→ Book the AI Hour · €200</a>
-      <a href="#contact" class="btn-ghost">Email me first</a>
+      <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="btn-primary" data-track="cta_book">→ Book the AI Hour · €200</a>
+      <a href="#contact" class="btn-ghost" data-track="cta_email_first">Email me first</a>
     </div>
     <p class="cta-note mono">Currently taking 4 sessions per month · I'll respond shortly after booking</p>
+    <p class="cta-note mono" style="margin-top:.6rem">20-minute guarantee: if it's not useful, I refund you in full.</p>
   </div>
 </section>
 
@@ -586,7 +625,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         <p class="section-label mono">Portfolio</p>
         <h2 class="section-title serif">Selected work</h2>
       </div>
-      <a class="portfolio-link mono" href="https://www.linkedin.com/in/ema-ilic/" target="_blank" rel="noreferrer">Full history on LinkedIn →</a>
+      <a class="portfolio-link mono" data-track="linkedin_portfolio" href="https://www.linkedin.com/in/ema-ilic/" target="_blank" rel="noreferrer">Full history on LinkedIn →</a>
     </div>
 
     <div class="portfolio-industries reveal" style="transition-delay:.05s">
@@ -741,7 +780,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         <p class="section-label mono">Writing</p>
         <h2 class="section-title serif">Read my blog posts on AI</h2>
       </div>
-      <a href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer" class="writing-link mono">All articles →</a>
+      <a href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer" class="writing-link mono" data-track="medium_all">All articles →</a>
     </div>
     <div class="articles-list reveal" style="transition-delay:.1s">
       <a class="article-row" href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer"><span class="article-idx mono">01</span><span class="article-title serif">I Installed an AI Agent and Filed 6 Travel Insurance Claims in Under 15 Minutes</span><span class="article-tag mono">Agents</span></a>
@@ -754,29 +793,30 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact" data-section="contact" class="contact">
   <div class="contact-inner">
     <div class="contact-copy reveal">
       <p class="section-label mono">Contact</p>
       <h2 class="section-title serif">Send me a message</h2>
-      <p>If you’re not ready to book yet, tell me what you’re building, or where you are in your AI learning/career pivot, and what you’d like help with.</p>
+      <p>If you’re not ready to book yet, tell me what you’re building and what decision you’re trying to make.</p>
       <div class="contact-direct">
         <div class="label mono">Direct email</div>
-        <span class="contact-email mono" aria-label="Email address">ema.ilic9@gmail.com</span>
+        <a href="mailto:ema.ilic9@gmail.com" class="contact-email mono" aria-label="Email address">ema.ilic9@gmail.com</a>
       </div>
     </div>
 
     <div class="contact-card reveal" style="transition-delay:.12s">
       <div class="field">
         <label for="cfMessage">Message</label>
-        <textarea id="cfMessage" name="message" required placeholder="A few lines about what you’re building (or your background if you’re pivoting into AI), what you’re trying to achieve, and where you’d like input."></textarea>
+        <textarea id="cfMessage" name="message" required placeholder="A few lines about your business, what you’re considering building with AI, and what’s making the decision hard."></textarea>
       </div>
       <div class="contact-actions">
-        <a class="btn-primary" id="whatsAppMessage" href="https://wa.me/385993749704" target="_blank" rel="noreferrer">→ WhatsApp me</a>
-        <button class="btn-ghost" type="button" id="copyEmail">Copy email</button>
+        <a class="btn-primary" id="whatsAppMessage" data-track="contact_whatsapp" href="https://wa.me/385993749704" target="_blank" rel="noreferrer">→ WhatsApp me</a>
+        <a class="btn-ghost" href="mailto:ema.ilic9@gmail.com" id="emailDirect" data-track="contact_email">→ Send email</a>
+        <button class="btn-ghost" type="button" id="copyEmail" data-track="contact_copy_email" style="border-color:var(--border);color:var(--dim)">Copy email</button>
       </div>
       <div class="copy-status form-note mono" id="copyStatus" aria-live="polite"></div>
-      <div class="form-note mono">No forms to submit. Choose WhatsApp or copy my email address.</div>
+      <div class="form-note mono">I typically reply within a few hours.</div>
     </div>
   </div>
 </section>
@@ -999,6 +1039,41 @@ reveals.forEach(el => observer.observe(el));
     msg.addEventListener('input', updateWhatsAppHref);
   }
   updateWhatsAppHref();
+})();
+
+// GA4 event tracking
+(() => {
+  const track = (action, label) => {
+    if (typeof gtag === 'function') gtag('event', action, { event_label: label });
+  };
+
+  document.querySelectorAll('[data-track]').forEach(el => {
+    el.addEventListener('click', () => track('cta_click', el.dataset.track));
+  });
+
+  // Scroll depth tracking (25%, 50%, 75%, 100%)
+  const fired = {};
+  window.addEventListener('scroll', () => {
+    const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    [25, 50, 75, 100].forEach(t => {
+      if (pct >= t && !fired[t]) {
+        fired[t] = true;
+        track('scroll_depth', `${t}%`);
+      }
+    });
+  }, { passive: true });
+
+  // Section visibility tracking
+  const sections = document.querySelectorAll('[data-section]');
+  const sectionObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        track('section_view', e.target.dataset.section);
+        sectionObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => sectionObs.observe(s));
 })();
 </script>
 </body>
