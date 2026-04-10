@@ -106,7 +106,7 @@ section{padding:6rem 3rem}
 .availability-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);padding:.35rem .9rem;margin-top:1.5rem}
 .availability-badge span{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.services-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin:4rem auto 0;background:var(--border);max-width:900px}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:4rem auto 0;background:var(--border);max-width:900px}
 .service-card{background:var(--bg2);padding:2.5rem;position:relative;transition:background .3s;border-top:2px solid transparent}
 .service-card:hover{background:var(--surface)}
 .service-card.featured{background:var(--surface);border-top-color:var(--accent)}
@@ -123,6 +123,11 @@ section{padding:6rem 3rem}
 .service-schedule-note{margin-top:1.2rem;font-size:.62rem;letter-spacing:.08em;color:var(--dim)}
 .service-cta{margin-top:2rem;display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--dim);padding-bottom:.2rem;transition:all .3s}
 .service-cta:hover{border-color:var(--accent)}
+.waitlist-form{margin-top:1.5rem}
+.waitlist-form .field{margin-bottom:.7rem}
+.waitlist-form .field input{padding:.6rem .75rem;font-size:.85rem;background:rgba(15,14,12,.6)}
+button.service-cta{background:transparent;border:none;border-bottom:1px solid var(--dim);cursor:pointer}
+.waitlist-form .service-cta{margin-top:1rem}
 .you-get{margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .you-get-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
 .you-get-items{list-style:none;display:flex;flex-direction:column;gap:.5rem}
@@ -339,7 +344,7 @@ _iub.csConfiguration = {
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">Ema Ilic</a>
-  <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="nav-cta" data-track="nav_book">Book the AI Hour · €200</a>
+  <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="nav-cta" data-track="nav_book">Book the AI Hour · €500</a>
 </nav>
 
 <!-- HERO -->
@@ -347,16 +352,16 @@ _iub.csConfiguration = {
   <div class="hero-grid-line"></div>
   <div class="hero-dot"></div>
   <p class="hero-label mono">AI Consulting · Currently Available</p>
-  <h1 class="serif">Everyone is talking about AI.<br><em>Let’s turn it into a clear decision.</em></h1>
-  <p class="hero-sub">If you’re not sure whether AI applies to your business, that’s exactly what this call is for. Most clients leave with a decision they’d been circling for weeks.</p>
+  <h1 class="serif">I’ve been building AI in production since 2019. Before ChatGPT. <em>Before the hype.</em> Let me tell you what’s actually worth building.</h1>
+  <p class="hero-sub">The most expensive AI mistakes happen in the first 90 days, before anyone in the room has actually shipped this stuff in production. I have been doing that since 2019, three years before it became a job title.</p>
   <div class="hero-proof">
-    <div class="proof-item"><span class="proof-num serif">2019</span><span class="proof-label mono">In AI since</span></div>
+    <div class="proof-item"><span class="proof-num serif">2019</span><span class="proof-label mono">Before ChatGPT</span></div>
     <div class="proof-item"><span class="proof-num serif">9,000+</span><span class="proof-label mono">Production hours</span></div>
     <div class="proof-item"><span class="proof-num serif">1,000+</span><span class="proof-label mono">Monthly active users</span></div>
     <div class="proof-item"><span class="proof-num serif">6</span><span class="proof-label mono">Enterprise clients</span></div>
   </div>
   <div class="hero-ctas">
-    <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="btn-primary" data-track="hero_book">→ Book the AI Hour · €200</a>
+    <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="btn-primary" data-track="hero_book">→ Book the AI Hour · €500</a>
     <a href="#services" class="btn-ghost" data-track="hero_services">See all services</a>
   </div>
   <a class="hero-proof-link mono" data-track="hero_testimonials" href="#recommendations">What clients say →</a>
@@ -528,7 +533,7 @@ _iub.csConfiguration = {
       <div class="step">
         <div class="step-num serif">01</div>
         <h3 class="step-title serif">Book and pay</h3>
-        <p class="step-desc">Click the button, pay €200, done. No long intake forms. No back-and-forth emails to lock in a time.</p>
+        <p class="step-desc">Click the button, pay €500, done. No long intake forms. No back-and-forth emails to lock in a time.</p>
       </div>
       <div class="step">
         <div class="step-num serif">02</div>
@@ -549,15 +554,43 @@ _iub.csConfiguration = {
   <div class="services-intro reveal">
     <p class="section-label mono">Services</p>
     <h2 class="section-title serif">Three ways to work together</h2>
-    <div class="availability-badge mono"><span></span> 4 sessions open per month · Currently available</div>
+    <div class="availability-badge mono"><span></span> Fractional advisory · 1 slot open · Consulting · 4 sessions per month</div>
   </div>
   <div class="services-grid reveal" style="transition-delay:.15s">
-    <!-- Featured: AI Hour -->
+    <!-- Fractional AI Advisor -->
     <div class="service-card featured">
       <div class="service-num serif">01</div>
+      <p class="service-tag mono">For funded startups</p>
+      <h3 class="service-name serif">Fractional AI Advisor</h3>
+      <div class="service-price serif">starting at €6,000 <span>/ month</span></div>
+      <p class="service-desc">Your part-time AI voice in the leadership team. I work with one or two Series A–C companies at a time, helping founders and CTOs make the right AI decisions before they get expensive to undo.</p>
+      <ul class="service-includes">
+        <li>Weekly or bi-weekly advisory sessions</li>
+        <li>Async availability for time-sensitive decisions (Slack or WhatsApp)</li>
+        <li>Hands-on review of technical proposals, vendor pitches, and build-vs-buy decisions</li>
+        <li>AI hiring input: what to look for, what questions to ask</li>
+        <li>Open to equity arrangements for the right company</li>
+      </ul>
+      <div class="guarantee">Waitlist open · Apply</div>
+      <div class="waitlist-form">
+        <div class="field">
+          <label for="wlCompany">Company</label>
+          <input type="text" id="wlCompany" placeholder="Company name, stage, what you do">
+        </div>
+        <div class="field">
+          <label for="wlFounder">Your name & email</label>
+          <input type="text" id="wlFounder" placeholder="Jane Doe, jane@company.com">
+        </div>
+        <button type="button" class="service-cta mono" id="waitlistSubmit" data-track="service_waitlist">Join the waitlist →</button>
+      </div>
+    </div>
+
+    <!-- AI Hour -->
+    <div class="service-card featured">
+      <div class="service-num serif">02</div>
       <p class="service-tag mono">Start here</p>
       <h3 class="service-name serif">The AI Hour</h3>
-      <div class="service-price serif">€200 <span>/ 60 min</span></div>
+      <div class="service-price serif">€500 <span>/ 60 min</span></div>
       <p class="service-desc">One focused session on your business. You bring context; I’ll help you pressure-test the idea and leave with next steps.</p>
       <ul class="service-includes">
         <li>60-minute session via Google Meet or WhatsApp</li>
@@ -572,10 +605,10 @@ _iub.csConfiguration = {
 
     <!-- AI Opportunity Audit -->
     <div class="service-card">
-      <div class="service-num serif">02</div>
+      <div class="service-num serif">03</div>
       <p class="service-tag mono">Deeper engagement</p>
       <h3 class="service-name serif">AI Opportunity Audit</h3>
-      <div class="service-price serif">€1,500 <span>/ project</span></div>
+      <div class="service-price serif">€2,500 <span>/ project</span></div>
       <p class="service-desc">A structured diagnostic of your business. Answers: what should you build, and why? You get prioritized opportunities and trade-offs in a written report your team can act on.</p>
       <ul class="service-includes">
         <li>2 structured calls: discovery + debrief</li>
@@ -591,7 +624,7 @@ _iub.csConfiguration = {
 
     <!-- AI Implementation Roadmap -->
     <div class="service-card">
-      <div class="service-num serif">03</div>
+      <div class="service-num serif">04</div>
       <p class="service-tag mono">Full engagement</p>
       <h3 class="service-name serif">AI Implementation Roadmap</h3>
       <div class="service-price serif">€4,500 <span>/ project</span></div>
@@ -616,10 +649,10 @@ _iub.csConfiguration = {
   <div class="cta-bg-text serif">Hour</div>
   <div class="cta-inner reveal">
     <p class="section-label mono">Ready?</p>
-    <h2 class="serif">One hour. A clear answer. <em>€200.</em></h2>
+    <h2 class="serif">One hour. A clear answer. <em>€500.</em></h2>
     <p>Pick a time and tell me what you’re working on. We’ll talk the same week.</p>
     <div class="cta-btns">
-      <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="btn-primary" data-track="cta_book">→ Book the AI Hour · €200</a>
+      <a href="https://buy.stripe.com/4gMeVc5Mm7fy9CdaHge7m02" target="_blank" class="btn-primary" data-track="cta_book">→ Book the AI Hour · €500</a>
       <a href="#contact" class="btn-ghost" data-track="cta_email_first">Email me first</a>
     </div>
     <p class="cta-note mono">Currently taking 4 sessions per month · I'll respond shortly after booking</p>
@@ -1073,6 +1106,23 @@ reveals.forEach(el => observer.observe(el));
     msg.addEventListener('input', updateWhatsAppHref);
   }
   updateWhatsAppHref();
+})();
+
+// Waitlist form
+(() => {
+  const btn = document.getElementById('waitlistSubmit');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const company = document.getElementById('wlCompany')?.value.trim() || '';
+    const founder = document.getElementById('wlFounder')?.value.trim() || '';
+    if (!company || !founder) {
+      alert('Please fill in both fields.');
+      return;
+    }
+    const subject = encodeURIComponent('Fractional AI Advisor \u2014 Waitlist Application');
+    const body = encodeURIComponent(`Company: ${company}\nFounder: ${founder}\n\nI'd like to join the waitlist for the Fractional AI Advisor engagement.`);
+    window.location.href = `mailto:ema.ilic9@gmail.com?subject=${subject}&body=${body}`;
+  });
 })();
 
 // GA4 event tracking — each action fires its own event name
