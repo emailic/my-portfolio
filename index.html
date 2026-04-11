@@ -8,7 +8,7 @@
 <meta name="description" content="Book the AI Hour: a focused 60-minute session where a GenAI engineer helps you decide what AI to build, what to skip, and where to start.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #0f0e0c;
@@ -26,13 +26,16 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:100;opacity:.4}
 .mono{font-family:'IBM Plex Mono',monospace}
-.serif{font-family:'Cormorant Garamond',serif}
+.serif{font-family:'DM Sans',sans-serif}
 a{color:inherit}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid transparent;transition:all .4s ease;background:linear-gradient(to bottom,rgba(15,14,12,.95),transparent)}
 nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);backdrop-filter:blur(12px)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;letter-spacing:.05em;text-decoration:none}
+.nav-logo{font-family:'DM Sans',sans-serif;font-size:1.3rem;font-weight:500;letter-spacing:.05em;text-decoration:none}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-link{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--accent)}
 .nav-cta{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:.5rem 1.2rem;transition:all .3s}
 .nav-cta:hover{background:var(--accent);color:var(--bg)}
 
@@ -41,12 +44,12 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .hero-grid-line{position:absolute;top:0;bottom:0;right:38%;width:1px;background:linear-gradient(to bottom,transparent,var(--border) 20%,var(--border) 80%,transparent);opacity:.5}
 .hero-dot{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,169,110,.08) 0%,transparent 70%);top:50%;left:55%;transform:translate(-50%,-50%);pointer-events:none}
 .hero-label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;opacity:0;animation:fadeUp .8s ease forwards .2s}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.8vw,4rem);font-weight:300;line-height:1.15;letter-spacing:-.015em;max-width:820px;opacity:0;animation:fadeUp .8s ease forwards .4s}
+.hero h1{font-family:'DM Sans',sans-serif;font-size:clamp(2.4rem,4.8vw,4rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;max-width:820px;opacity:0;animation:fadeUp .8s ease forwards .4s}
 .hero h1 em{font-style:italic;color:var(--accent)}
 .hero-sub{margin-top:2rem;font-size:1.05rem;color:var(--muted);max-width:540px;line-height:1.8;opacity:0;animation:fadeUp .8s ease forwards .6s}
 .hero-proof{margin-top:3rem;display:flex;gap:2.5rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards .8s}
 .proof-item{display:flex;flex-direction:column;gap:.2rem}
-.proof-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--accent);line-height:1}
+.proof-num{font-family:'DM Sans',sans-serif;font-size:2rem;font-weight:400;color:var(--accent);line-height:1}
 .proof-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .hero-ctas{margin-top:3.5rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards 1s}
 .btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;font-weight:500;transition:all .3s}
@@ -66,7 +69,7 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .for-you{padding:5rem 3rem}
 .for-you-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .for-you-col p.section-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-.for-you-col h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;margin-bottom:1.8rem}
+.for-you-col h2{font-family:'DM Sans',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1.2;margin-bottom:1.8rem}
 .for-you-list{list-style:none;display:flex;flex-direction:column;gap:.8rem}
 .for-you-list li{font-size:.92rem;color:var(--muted);display:flex;gap:.8rem;align-items:flex-start;line-height:1.6}
 .for-you-list li::before{content:'→';color:var(--accent);flex-shrink:0;margin-top:.05rem}
@@ -78,7 +81,7 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .outcomes-inner{max-width:900px;margin:0 auto}
 .outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3rem;background:var(--border)}
 .outcome-card{background:var(--surface);padding:2rem 1.8rem}
-.outcome-stat{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--accent);line-height:1;margin-bottom:.6rem}
+.outcome-stat{font-family:'DM Sans',sans-serif;font-size:2.4rem;font-weight:400;color:var(--accent);line-height:1;margin-bottom:.6rem}
 .outcome-desc{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:.6rem}
 .outcome-client{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
 
@@ -88,15 +91,15 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 /* SECTION COMMONS */
 section{padding:6rem 3rem}
 .section-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15}
+.section-title{font-family:'DM Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.2}
 
 /* HOW IT WORKS */
 .how-it-works{background:var(--surface);padding:5rem 3rem}
 .how-inner{max-width:900px;margin:0 auto}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3rem;background:var(--border)}
 .step{background:var(--surface);padding:2.5rem 2rem}
-.step-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--dim);line-height:1;margin-bottom:1.2rem}
-.step-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;margin-bottom:.7rem}
+.step-num{font-family:'DM Sans',sans-serif;font-size:3rem;font-weight:300;color:var(--dim);line-height:1;margin-bottom:1.2rem}
+.step-title{font-family:'DM Sans',sans-serif;font-size:1.25rem;font-weight:500;margin-bottom:.7rem}
 .step-desc{font-size:.87rem;color:var(--muted);line-height:1.7}
 
 /* SERVICES */
@@ -106,15 +109,15 @@ section{padding:6rem 3rem}
 .availability-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);padding:.35rem .9rem;margin-top:1.5rem}
 .availability-badge span{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:4rem auto 0;background:var(--border);max-width:900px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:4rem auto 0;background:var(--border);max-width:900px}
 .service-card{background:var(--bg2);padding:2.5rem;position:relative;transition:background .3s;border-top:2px solid transparent}
 .service-card:hover{background:var(--surface)}
 .service-card.featured{background:var(--surface);border-top-color:var(--accent)}
-.service-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--border);line-height:1;margin-bottom:1.5rem}
+.service-num{font-family:'DM Sans',sans-serif;font-size:3.5rem;font-weight:300;color:var(--border);line-height:1;margin-bottom:1.5rem}
 .service-card.featured .service-num{color:var(--dim)}
 .service-tag{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
-.service-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:.3rem}
-.service-price{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);margin:1rem 0}
+.service-name{font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:500;margin-bottom:.3rem}
+.service-price{font-family:'DM Sans',sans-serif;font-size:2rem;font-weight:400;color:var(--accent);margin:1rem 0}
 .service-price span{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--muted);vertical-align:middle;margin-left:.3rem}
 .service-desc{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
 .service-includes{list-style:none;display:flex;flex-direction:column;gap:.5rem}
@@ -123,11 +126,7 @@ section{padding:6rem 3rem}
 .service-schedule-note{margin-top:1.2rem;font-size:.62rem;letter-spacing:.08em;color:var(--dim)}
 .service-cta{margin-top:2rem;display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--dim);padding-bottom:.2rem;transition:all .3s}
 .service-cta:hover{border-color:var(--accent)}
-.waitlist-form{margin-top:1.5rem}
-.waitlist-form .field{margin-bottom:.7rem}
-.waitlist-form .field input{padding:.6rem .75rem;font-size:.85rem;background:rgba(15,14,12,.6)}
 button.service-cta{background:transparent;border:none;border-bottom:1px solid var(--dim);cursor:pointer}
-.waitlist-form .service-cta{margin-top:1rem}
 .you-get{margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .you-get-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
 .you-get-items{list-style:none;display:flex;flex-direction:column;gap:.5rem}
@@ -165,7 +164,7 @@ button.service-cta{background:transparent;border:none;border-bottom:1px solid va
 .article-row:first-child{border-top:1px solid var(--border)}
 .article-row:hover{background:var(--surface);padding-left:1rem;padding-right:1rem;margin:0 -1rem}
 .article-idx{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--dim)}
-.article-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400}
+.article-title{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:400}
 .article-tag{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
 /* PORTFOLIO */
@@ -180,7 +179,7 @@ button.service-cta{background:transparent;border:none;border-bottom:1px solid va
 .portfolio-topline{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
 .portfolio-company{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
 .portfolio-date{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--dim);letter-spacing:.06em}
-.portfolio-role{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;line-height:1.25;margin-bottom:.25rem}
+.portfolio-role{font-family:'DM Sans',sans-serif;font-size:1.4rem;font-weight:500;line-height:1.25;margin-bottom:.25rem}
 .portfolio-location{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--dim);letter-spacing:.06em;margin-bottom:1.2rem}
 .portfolio-narrative{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:1.4rem}
 .portfolio-tech{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.4rem}
@@ -209,7 +208,7 @@ button.service-cta{background:transparent;border:none;border-bottom:1px solid va
 .recs-carousel{margin-top:2.5rem;border:1px solid var(--border);background:var(--surface);position:relative;overflow:hidden}
 .recs-track{display:flex;transition:transform .5s ease;will-change:transform}
 .recs-slide{min-width:100%;padding:2.2rem 2.2rem 1.8rem}
-.recs-quote{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;line-height:1.55;color:var(--text)}
+.recs-quote{font-family:'DM Sans',sans-serif;font-size:1.15rem;font-weight:300;line-height:1.6;color:var(--text)}
 .recs-quote em{font-style:italic;color:var(--accent)}
 .recs-meta{margin-top:1.4rem;display:flex;flex-direction:column;gap:.35rem}
 .recs-name{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
@@ -227,9 +226,9 @@ button.service-cta{background:transparent;border:none;border-bottom:1px solid va
 
 /* CTA */
 .cta-section{text-align:center;padding:8rem 3rem;position:relative;overflow:hidden}
-.cta-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:18vw;font-weight:300;color:var(--surface);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;line-height:1}
+.cta-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'DM Sans',sans-serif;font-size:18vw;font-weight:300;color:var(--surface);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;line-height:1}
 .cta-inner{position:relative;z-index:2;max-width:600px;margin:0 auto}
-.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:1.2rem}
+.cta-inner h2{font-family:'DM Sans',sans-serif;font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:400;line-height:1.15;margin-bottom:1.2rem}
 .cta-inner h2 em{font-style:italic;color:var(--accent)}
 .cta-inner p{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
@@ -257,7 +256,7 @@ button.service-cta{background:transparent;border:none;border-bottom:1px solid va
 
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--bg2)}
-.footer-name{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--muted)}
+.footer-name{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;color:var(--muted)}
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--accent)}
@@ -270,6 +269,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 
 /* RESPONSIVE */
 @media(max-width:768px){
+  .nav-links{display:none}
   nav{padding:1.2rem 1.5rem}
   section,.for-you,.how-it-works,.cta-section{padding:4rem 1.5rem}
   .hero{padding:7rem 1.5rem 4rem}
@@ -291,7 +291,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   .portfolio-header{flex-direction:column;gap:.8rem;align-items:flex-start}
   .recs-slide{padding:1.8rem 1.4rem 1.4rem}
   .recs-controls{padding:.9rem 1rem}
-  .recs-quote{font-size:1.2rem}
+  .recs-quote{font-size:1.05rem}
   .speaking-strip{grid-template-columns:1fr 1fr;height:auto}
   .speaking-strip figure{height:220px}
   .contact-inner{grid-template-columns:1fr;gap:2rem}
@@ -344,6 +344,13 @@ _iub.csConfiguration = {
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">Ema Ilic</a>
+  <div class="nav-links">
+    <a href="#services" class="nav-link mono">Services</a>
+    <a href="#about" class="nav-link mono">About</a>
+    <a href="#portfolio" class="nav-link mono">Portfolio</a>
+    <a href="#writing" class="nav-link mono">Writing</a>
+    <a href="#contact" class="nav-link mono">Contact</a>
+  </div>
   <a href="https://book.stripe.com/7sYcN4b6G2Zi3dPaHge7m03" target="_blank" class="nav-cta" data-track="nav_book">Book the AI Hour · €500</a>
 </nav>
 
@@ -352,8 +359,8 @@ _iub.csConfiguration = {
   <div class="hero-grid-line"></div>
   <div class="hero-dot"></div>
   <p class="hero-label mono">AI Consulting · Currently Available</p>
-  <h1 class="serif">You’re making AI decisions under pressure, with incomplete information, and no one on your team who’s shipped this before. <em>One conversation can change that.</em></h1>
-  <p class="hero-sub">The most expensive AI mistakes happen in the first 90 days, before anyone in the room has actually shipped this stuff in production. I have been doing that since 2019, three years before it became a job title.</p>
+  <h1 class="serif">Everyone is talking about AI.<br><em>Let's turn it into a clear decision.</em></h1>
+  <p class="hero-sub">The most expensive AI mistakes happen in the first 90 days. I've been shipping AI in production since 2019, three years before it became a job title.</p>
   <div class="hero-proof">
     <div class="proof-item"><span class="proof-num serif">2019</span><span class="proof-label mono">Before ChatGPT</span></div>
     <div class="proof-item"><span class="proof-num serif">9,000+</span><span class="proof-label mono">Production hours</span></div>
@@ -382,8 +389,7 @@ _iub.csConfiguration = {
       <p class="section-label mono">This is for you if</p>
       <h2 class="serif">You want a straight answer on whether AI makes sense for your business.</h2>
       <ul class="for-you-list">
-        <li>You keep hearing “you need AI” but no one has given you a concrete plan for your business</li>
-        <li>You run a business and have real decisions to make about where AI fits</li>
+        <li>You keep hearing “you need AI” but no one has given you a concrete plan</li>
         <li>You’ve tried ChatGPT and want to know what’s actually buildable for your use case</li>
         <li>You want an honest answer from someone who builds this stuff for a living</li>
       </ul>
@@ -393,7 +399,6 @@ _iub.csConfiguration = {
       <h2 class="serif">You want guaranteed results or someone to build everything for you.</h2>
       <ul class="for-you-list not">
         <li>You want someone to promise AI will save your business overnight</li>
-        <li>You want someone to skip the thinking and just start building</li>
         <li>You're looking for someone to validate a decision you've already made</li>
         <li>You want generic AI inspiration you could get from a blog post</li>
       </ul>
@@ -469,24 +474,6 @@ _iub.csConfiguration = {
         </article>
 
         <article class="recs-slide" aria-label="Recommendation 3">
-          <p class="recs-quote">“Ema distinguishes herself with dedicated focus on AI development and continuous pursuit of knowledge… adapting and implementing complex concepts in practical scenarios… a fantastic team player.”</p>
-          <div class="recs-meta">
-            <div class="recs-name">Dan Panu-Misailescu</div>
-            <div class="recs-role">Senior AI Software Engineer · AI Agents, LLMs, MCP, React, Next.js</div>
-            <div class="recs-when">Jan 23, 2024 · Worked together on the same team</div>
-          </div>
-        </article>
-
-        <article class="recs-slide" aria-label="Recommendation 4">
-          <p class="recs-quote">“Ema’s expertise as an AI specialist and ML engineer was outstanding… meticulous approach to problem-solving, consistently delivering innovative solutions… clear communication and commitment to staying at the forefront of AI advancements.”</p>
-          <div class="recs-meta">
-            <div class="recs-name">Anton Jonathan Goorin</div>
-            <div class="recs-role">AI Experience Designer · DevOps</div>
-            <div class="recs-when">Jan 18, 2024 · Worked together on the same team</div>
-          </div>
-        </article>
-
-        <article class="recs-slide" aria-label="Recommendation 5">
           <p class="recs-quote">“She always came to work with a positive attitude and a desire to learn… her knowledge was instrumental in helping us understand training data needs… I would work with Ema again given an opportunity.”</p>
           <div class="recs-meta">
             <div class="recs-name">Ted Stresen-Reuter</div>
@@ -495,16 +482,7 @@ _iub.csConfiguration = {
           </div>
         </article>
 
-        <article class="recs-slide" aria-label="Recommendation 6">
-          <p class="recs-quote">“Outstanding computer vision engineer… very thorough in everything she does and can be depended upon to get the job done. Excellent and result driven… valuable contributor to our project.”</p>
-          <div class="recs-meta">
-            <div class="recs-name">Aridai Santana Gil</div>
-            <div class="recs-role">Software Engineer @ SIX</div>
-            <div class="recs-when">May 5, 2022 · Worked together on the same team</div>
-          </div>
-        </article>
-
-        <article class="recs-slide" aria-label="Recommendation 7">
+        <article class="recs-slide" aria-label="Recommendation 4">
           <p class="recs-quote">“She presented the rare ability to bridge the gap between theoretical research and scalable AI infrastructure… she never builds in a vacuum, always ensuring she fully understands the broader context to deliver the most effective solutions.”</p>
           <div class="recs-meta">
             <div class="recs-name">Oren Raab</div>
@@ -554,40 +532,12 @@ _iub.csConfiguration = {
   <div class="services-intro reveal">
     <p class="section-label mono">Services</p>
     <h2 class="section-title serif">Three ways to work together</h2>
-    <div class="availability-badge mono"><span></span> Fractional advisory · 1 slot open · Consulting · 4 sessions per month</div>
+    <div class="availability-badge mono"><span></span> Consulting · 4 sessions per month · Open to longer engagements by application</div>
   </div>
   <div class="services-grid reveal" style="transition-delay:.15s">
-    <!-- Fractional AI Advisor -->
-    <div class="service-card featured">
-      <div class="service-num serif">01</div>
-      <p class="service-tag mono">For funded startups</p>
-      <h3 class="service-name serif">Fractional AI Advisor</h3>
-      <div class="service-price serif">starting at €6,000 <span>/ month</span></div>
-      <p class="service-desc">Your part-time AI voice in the leadership team. I work with one or two Series A–C companies at a time, helping founders and CTOs make the right AI decisions before they get expensive to undo.</p>
-      <ul class="service-includes">
-        <li>Weekly or bi-weekly advisory sessions</li>
-        <li>Async availability for time-sensitive decisions (Slack or WhatsApp)</li>
-        <li>Hands-on review of technical proposals, vendor pitches, and build-vs-buy decisions</li>
-        <li>AI hiring input: what to look for, what questions to ask</li>
-        <li>Open to equity arrangements for the right company</li>
-      </ul>
-      <div class="guarantee">Waitlist open · Apply</div>
-      <div class="waitlist-form">
-        <div class="field">
-          <label for="wlCompany">Company</label>
-          <input type="text" id="wlCompany" placeholder="Company name, stage, what you do">
-        </div>
-        <div class="field">
-          <label for="wlFounder">Your name & email</label>
-          <input type="text" id="wlFounder" placeholder="Jane Doe, jane@company.com">
-        </div>
-        <button type="button" class="service-cta mono" id="waitlistSubmit" data-track="service_waitlist">Join the waitlist →</button>
-      </div>
-    </div>
-
     <!-- AI Hour -->
     <div class="service-card featured">
-      <div class="service-num serif">02</div>
+      <div class="service-num serif">01</div>
       <p class="service-tag mono">Start here</p>
       <h3 class="service-name serif">The AI Hour</h3>
       <div class="service-price serif">€500 <span>/ 60 min</span></div>
@@ -605,7 +555,7 @@ _iub.csConfiguration = {
 
     <!-- AI Opportunity Audit -->
     <div class="service-card">
-      <div class="service-num serif">03</div>
+      <div class="service-num serif">02</div>
       <p class="service-tag mono">Deeper engagement</p>
       <h3 class="service-name serif">AI Opportunity Audit</h3>
       <div class="service-price serif">€2,500 <span>/ project</span></div>
@@ -619,12 +569,12 @@ _iub.csConfiguration = {
       </ul>
       <a href="https://book.stripe.com/9B65kC2AafM43dPbLke7m01" target="_blank" class="service-cta mono" data-track="service_book">Book now →</a>
       <p class="availability-note">1 engagement open per month</p>
-      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Opportunity%20Audit%20(%E2%82%AC1500)" target="_blank" rel="noreferrer" class="service-cta mono" data-track="service_conversation" style="margin-top:.8rem;color:var(--muted);border-bottom-color:var(--border)">Start a conversation →</a>
+      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Opportunity%20Audit%20(%E2%82%AC2500)" target="_blank" rel="noreferrer" class="service-cta mono" data-track="service_conversation" style="margin-top:.8rem;color:var(--muted);border-bottom-color:var(--border)">Start a conversation →</a>
     </div>
 
     <!-- AI Implementation Roadmap -->
     <div class="service-card">
-      <div class="service-num serif">04</div>
+      <div class="service-num serif">03</div>
       <p class="service-tag mono">Full engagement</p>
       <h3 class="service-name serif">AI Implementation Roadmap</h3>
       <div class="service-price serif">€4,500 <span>/ project</span></div>
@@ -667,6 +617,7 @@ _iub.csConfiguration = {
       <p class="section-label mono">About</p>
       <h2 class="section-title serif">I’m an engineer first, and I consult because I’m good at turning technical options into decisions teams can act on.</h2>
       <p>I’ve spent seven years shipping AI into production: RAG pipelines, LLM agents, chatbots, MLOps. My work was featured at Google I/O and published at SwissText, and the systems I’ve built serve thousands of people across six enterprise engagements. I consult because non-technical founders and operators need someone who can turn all of that into a clear next step.</p>
+      <p>I occasionally take on longer advisory engagements with funded startups. If that’s what you’re looking for, <a href="#contact">get in touch</a>.</p>
       <div class="about-credentials">
         <div class="credential"><span class="credential-name">Google I/O 2023</span><span class="credential-detail mono">San Francisco</span></div>
         <div class="credential"><span class="credential-name">SwissText Conference 2022</span><span class="credential-detail mono">Lugano, Switzerland</span></div>
@@ -704,9 +655,6 @@ _iub.csConfiguration = {
         <span class="pill mono">Biopharma</span>
         <span class="pill mono">DevTools</span>
         <span class="pill mono">Solar Energy</span>
-        <span class="pill mono">Construction</span>
-        <span class="pill mono">NLP &amp; Translation</span>
-        <span class="pill mono">Environmental Science</span>
       </div>
     </div>
 
@@ -720,7 +668,7 @@ _iub.csConfiguration = {
           </div>
           <h3 class="portfolio-role serif">GenAI Engineer</h3>
           <p class="portfolio-location mono">Tel Aviv, Israel · Remote</p>
-          <p class="portfolio-narrative">Evinced builds tools that help developers ship accessible software. I designed the backend for their chatbot and MCP integrations, and ran the research side, testing ways to make accessibility tooling more useful for developers. In benchmarks, accessibility experts preferred the chatbot's answers 3x over standard AI.</p>
+          <p class="portfolio-narrative">I designed the backend for Evinced's accessibility chatbot and their MCP integrations. In blind benchmarks, accessibility experts preferred the chatbot's answers 3x over standard AI.</p>
           <div class="portfolio-tech">
             <span class="pill mono">TypeScript</span><span class="pill mono">React</span><span class="pill mono">Node.js</span><span class="pill mono">Python</span><span class="pill mono">GCP</span><span class="pill mono">MCP</span><span class="pill mono">LLMs</span>
           </div>
@@ -737,7 +685,7 @@ _iub.csConfiguration = {
           </div>
           <h3 class="portfolio-role serif">AI/ML Engineer, Generative AI</h3>
           <p class="portfolio-location mono">Rijeka, Croatia · Remote</p>
-          <p class="portfolio-narrative">Two projects over two years at this AI startup backed by Holtzbrinck Publishing Group. Noa was a publisher-facing chatbot I helped scale to 1,000+ monthly active users. I built the RAG pipelines with Pinecone and OpenAI and designed the evaluation systems that kept answer quality high. Stori was a children’s storybook app that generated copy and illustrations on the fly. I built the image pipeline with Stable Diffusion and DreamBooth. It was featured at Google I/O 2023.</p>
+          <p class="portfolio-narrative">I built the RAG pipelines and evaluation systems behind Noa, a publisher chatbot that grew to 1,000+ monthly active users. The second project, Stori, was a children’s AI storybook app that Google featured at I/O 2023.</p>
           <div class="portfolio-tech">
             <span class="pill mono">Python</span><span class="pill mono">LangChain</span><span class="pill mono">Langfuse</span><span class="pill mono">Pinecone</span><span class="pill mono">GCP</span><span class="pill mono">Terraform</span><span class="pill mono">Docker</span><span class="pill mono">OpenAI</span><span class="pill mono">Stable Diffusion</span>
           </div>
@@ -754,7 +702,7 @@ _iub.csConfiguration = {
           </div>
           <h3 class="portfolio-role serif">Senior AI/ML Engineer &amp; Advisor</h3>
           <p class="portfolio-location mono">Remote</p>
-          <p class="portfolio-narrative">Advised 6+ clients across IoT, e-commerce, solar energy, and tech startups. For one client I wrote an AI analytics proposal for a water utility’s leak detection system. For another I scoped and estimated a full AI chatbot and content generation pipeline for a luxury e-commerce platform. I also ran a comparative evaluation of 14 AI tools for data engineering and analytics adoption.</p>
+          <p class="portfolio-narrative">I advised 6+ clients across IoT, e-commerce, solar energy, and tech startups on what to build and what to skip. That included build-vs-buy evaluations, AI product scoping, and technical proposals.</p>
           <div class="portfolio-tech">
             <span class="pill mono">AWS</span><span class="pill mono">Python</span><span class="pill mono">GCP</span><span class="pill mono">AI Advisory</span><span class="pill mono">Infrastructure</span>
           </div>
@@ -770,7 +718,7 @@ _iub.csConfiguration = {
           </div>
           <h3 class="portfolio-role serif">AI Solutions Consultant</h3>
           <p class="portfolio-location mono">Zagreb, Croatia · Remote</p>
-          <p class="portfolio-narrative">Pre-sales engagement for a pharma company building a bioprocess simulation platform. I mapped out the ML use cases (sensitivity analysis, automated retraining, model lifecycle management) and proposed assistant features for simulation and experiment design that fit within their regulatory constraints.</p>
+          <p class="portfolio-narrative">A pharma company was building a bioprocess simulation platform and needed to figure out where ML fit. I mapped the use cases and proposed AI assistant features that worked within their regulatory constraints.</p>
           <div class="portfolio-tech">
             <span class="pill mono">AI Strategy</span><span class="pill mono">MLOps</span><span class="pill mono">Pre-Sales</span><span class="pill mono">Biotech</span>
           </div>
@@ -779,55 +727,7 @@ _iub.csConfiguration = {
           </div>
         </article>
 
-        <article class="portfolio-slide" aria-label="Pangeanic">
-          <div class="portfolio-topline">
-            <span class="portfolio-company mono">Pangeanic Language Technologies</span>
-            <span class="portfolio-date mono">Jul 2021 – Mar 2022</span>
-          </div>
-          <h3 class="portfolio-role serif">NLP Scientist (LLMs)</h3>
-          <p class="portfolio-location mono">Valencia, Spain</p>
-          <p class="portfolio-narrative">I fine-tuned BERT and GPT-2 for multilabel text classification, hitting 99% accuracy and 98% F1. We compared transformer models against traditional classifiers across several datasets and published the results at SwissText 2022 in Lugano, Switzerland.</p>
-          <div class="portfolio-tech">
-            <span class="pill mono">Python</span><span class="pill mono">BERT</span><span class="pill mono">GPT-2</span><span class="pill mono">HuggingFace</span><span class="pill mono">PyTorch</span><span class="pill mono">Scikit-Learn</span>
-          </div>
-          <div class="portfolio-links">
-            <a class="portfolio-ext" href="https://ceur-ws.org/Vol-3361/" target="_blank" rel="noreferrer">SwissText 2022 paper →</a>
-          </div>
-        </article>
-
-        <article class="portfolio-slide" aria-label="ULPGC Research">
-          <div class="portfolio-topline">
-            <span class="portfolio-company mono">University of Las Palmas de Gran Canaria</span>
-            <span class="portfolio-date mono">Jan 2022 – Oct 2022</span>
-          </div>
-          <h3 class="portfolio-role serif">Research Scientist, Computer Vision</h3>
-          <p class="portfolio-location mono">Las Palmas, Canary Islands, Spain</p>
-          <p class="portfolio-narrative">I built a computer vision pipeline to detect and classify microplastics collected on Canary Islands beaches. It used YOLOv5 for detection, UNET for segmentation, and VGG16 for classification. The final model hit 96.41% F1, which was 3.6x better than the previous best.</p>
-          <div class="portfolio-tech">
-            <span class="pill mono">Python</span><span class="pill mono">YOLOv5</span><span class="pill mono">PyTorch</span><span class="pill mono">TensorFlow</span><span class="pill mono">UNET</span><span class="pill mono">VGG16</span>
-          </div>
-          <div class="portfolio-links">
-            <a class="portfolio-ext" href="https://github.com/emailic/YOLOv5-Microplasticos" target="_blank" rel="noreferrer">GitHub repo →</a>
-          </div>
-        </article>
-
-        <article class="portfolio-slide" aria-label="Secret Source">
-          <div class="portfolio-topline">
-            <span class="portfolio-company mono">Secret Source S.L.</span>
-            <span class="portfolio-date mono">Sep 2021 – Dec 2021</span>
-          </div>
-          <h3 class="portfolio-role serif">Computer Vision Engineer</h3>
-          <p class="portfolio-location mono">Las Palmas, Canary Islands, Spain</p>
-          <p class="portfolio-narrative">I built the ML backend for classifying 40+ types of construction machinery using ResNet34, 50, and 101. The model ended up shipping as an Android app for on-site identification.</p>
-          <div class="portfolio-tech">
-            <span class="pill mono">Python</span><span class="pill mono">Fast.ai</span><span class="pill mono">PyTorch</span><span class="pill mono">ResNet</span><span class="pill mono">TensorFlow</span><span class="pill mono">Pandas</span>
-          </div>
-          <div class="portfolio-links">
-            <a class="portfolio-ext" href="https://wmit.nocn.org/demo" target="_blank" rel="noreferrer">Project demo →</a>
-          </div>
-        </article>
-
-      </div>
+        </div>
 
       <div class="portfolio-controls">
         <button class="portfolio-btn" type="button" id="portfolioPrev" aria-label="Previous project">← Prev</button>
@@ -1108,22 +1008,6 @@ reveals.forEach(el => observer.observe(el));
   updateWhatsAppHref();
 })();
 
-// Waitlist form
-(() => {
-  const btn = document.getElementById('waitlistSubmit');
-  if (!btn) return;
-  btn.addEventListener('click', () => {
-    const company = document.getElementById('wlCompany')?.value.trim() || '';
-    const founder = document.getElementById('wlFounder')?.value.trim() || '';
-    if (!company || !founder) {
-      alert('Please fill in both fields.');
-      return;
-    }
-    const subject = encodeURIComponent('Fractional AI Advisor \u2014 Waitlist Application');
-    const body = encodeURIComponent(`Company: ${company}\nFounder: ${founder}\n\nI'd like to join the waitlist for the Fractional AI Advisor engagement.`);
-    window.location.href = `mailto:ema.ilic9@gmail.com?subject=${subject}&body=${body}`;
-  });
-})();
 
 // GA4 event tracking — each action fires its own event name
 (() => {
